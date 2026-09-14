@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gigcalc.globalcorehub.com/sitemap.xml
