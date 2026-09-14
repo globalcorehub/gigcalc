@@ -207,6 +207,24 @@
   }
   </script>
   
+  <!-- Structured Data JSON-LD (FinancialProduct) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "Générateur de Factures Épurées - Téléchargement PDF Vectoriel Instantané",
+    "url": "https://gigcalc.globalcorehub.com/fr/clean-invoice-generator",
+    "description": "Éditez des factures professionnelles impeccables et téléchargez votre PDF vectoriel immédiatement sans compte.",
+    "feesAndCommissionsSpecification": "Free, Zero Fees, 100% Client-Side",
+    "provider": {
+      "@type": "Organization",
+      "name": "GigCalc Studio",
+      "url": "https://gigcalc.globalcorehub.com"
+    }
+  }
+  </script>
+  
+  
   <!-- BreadcrumbList Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
@@ -577,9 +595,23 @@
       </div>
     </div>
 
+    <!-- Financial Compliance Disclaimer Banner -->
+    <div class="mt-4 p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-mono flex items-start space-x-2">
+      <span class="text-base leading-none">⚠️</span>
+      <span class="leading-relaxed">⚠️ Clause de non-responsabilité : Simulations financières à des fins d’estimation et de planification uniquement. Ne constitue pas un conseil comptable, fiscal ou juridique officiel.</span>
+    </div>
+
+    <style>
+    @media print {
+      body { background: white !important; color: #0f172a !important; }
+      header, footer, section, nav, button, #back-to-top-btn, #inv-drop-zone, .border-b { display: none !important; }
+      #invoice-sheet { border: none !important; box-shadow: none !important; margin: 0 !important; width: 100% !important; padding: 0 !important; }
+    }
+    </style>
+
     <!-- Dropzone for invoice JSON / data -->
     <div id="inv-drop-zone" class="mt-4 p-3 rounded-xl border border-dashed border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 text-center text-xs opacity-75 cursor-pointer hover:border-[#10b981] transition flex items-center justify-center gap-2">
-      <span>📂 Drop invoice data or logo here (100% local, FileReader parsed)</span>
+      <span>📂 100% Client-Side Invoice Sandbox (FileReader parsed, zero cloud upload)</span>
     </div>
 
     <!-- Invoice Canvas Preview -->
@@ -602,7 +634,7 @@
           <input type="text" value="finance@acme.com" class="text-xs text-slate-500 block w-full bg-transparent border-none p-0 focus:outline-none mt-0.5">
         </div>
         <div class="text-right">
-          <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">DUE DATE</span>
+          <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Date d’Échéance</span>
           <input type="date" value="2026-10-01" class="font-bold text-sm text-slate-800 text-right block w-full bg-transparent border-none p-0 focus:outline-none mt-1">
         </div>
       </div>
@@ -612,10 +644,10 @@
         <table class="w-full text-left text-xs">
           <thead>
             <tr class="border-b border-slate-200 text-slate-400 font-bold uppercase text-[10px]">
-              <th class="pb-2">Description</th>
-              <th class="pb-2 text-right">Hours</th>
-              <th class="pb-2 text-right">Rate</th>
-              <th class="pb-2 text-right">Amount</th>
+              <th class="pb-2">Description de la Prestation</th>
+              <th class="pb-2 text-right">Quantité / Heures</th>
+              <th class="pb-2 text-right">Prix Unitaire / Taux</th>
+              <th class="pb-2 text-right">Sous-total</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100">
@@ -638,9 +670,9 @@
       <!-- Total -->
       <div class="mt-6 pt-4 border-t border-slate-200 flex justify-end">
         <div class="text-right space-y-1">
-          <div class="text-xs text-slate-500">Subtotal: <span class="font-mono font-bold text-slate-800">$7,050.00</span></div>
-          <div class="text-xs text-slate-500">Tax (0%): <span class="font-mono font-bold text-slate-800">$0.00</span></div>
-          <div class="text-base font-black text-slate-900 pt-1">Total Due: <span class="font-mono text-emerald-600">$7,050.00</span></div>
+          <div class="text-xs text-slate-500">Sous-total: <span class="font-mono font-bold text-slate-800">$7,050.00</span></div>
+          <div class="text-xs text-slate-500">TVA (%): <span class="font-mono font-bold text-slate-800">$0.00</span></div>
+          <div class="text-base font-black text-slate-900 pt-1">Total à Payer: <span class="font-mono text-emerald-600">$7,050.00</span></div>
         </div>
       </div>
     </div>
@@ -788,22 +820,220 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-[#e7e5e4] dark:border-[#334155] py-8 text-center text-xs opacity-75">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-left space-y-1">
+  <!-- Global Multi-Language Matrix -->
+  <section class="border-t border-[#e7e5e4] dark:border-[#334155] py-10 px-4 sm:px-6 lg:px-8 opacity-95 bg-black/[0.02] dark:bg-white/[0.02]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider opacity-85 font-mono flex items-center gap-2">
+            <span>🌐</span> <span>Matrice Mondiale Multilingue</span>
+          </h3>
+          <p class="text-xs opacity-60 mt-0.5 font-mono">
+            7 Locales &middot; 42 Localized Endpoints &middot; 100% Client-Side
+          </p>
+        </div>
+        <span class="text-xs font-mono opacity-50">[FR] Français (fr)</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2.5">
+        
+        <a href="/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[EN]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">English</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/zh/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[ZH]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">简体中文</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/es/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[ES]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">Español</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/pt/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[PT]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">Português</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/de/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[DE]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">Deutsch</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/fr/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ring-2 ring-[#10b981]/50">
+          <div class="text-xl mb-1">[FR]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">Français</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+        <a href="/ja/clean-invoice-generator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+          <div class="text-xl mb-1">[JA]</div>
+          <div class="text-xs font-bold truncate group-hover:underline">日本語</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">5 Tous les Outils</div>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Multi-Column Footer -->
+  <footer class="border-t border-[#e7e5e4] dark:border-[#334155] pt-12 pb-8 text-xs opacity-90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Prominent Medical / Financial Compliance Disclaimer Banner -->
+      <div class="mb-10 p-4 rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400 font-mono flex items-start space-x-3 text-left">
+        <span class="text-lg leading-none mt-0.5">⚠️</span>
+        <div class="leading-relaxed">
+          <strong class="font-bold block mb-0.5 text-xs">Avis Important & Clause de Non-Responsabilité</strong>
+          <span class="text-[11px] opacity-90">Outils d’aide à la gestion. Consultez un expert-comptable ou un juriste pour vos déclarations officielles.</span>
+        </div>
+      </div>
+      
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <!-- Col 1: Brand & Architecture -->
+        <div class="space-y-3">
+          <div class="text-sm font-bold tracking-tight">
+            GigCalc Studio
+          </div>
+          <p class="text-[11px] opacity-70 leading-relaxed max-w-xs">
+            Éditez des factures professionnelles impeccables et téléchargez votre PDF vectoriel immédiatement sans compte.
+          </p>
+          <div class="p-2.5 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono text-[11px] text-[#10b981]">
+            🔒 100% Exécution Locale en Bac à Sable : Aucun stockage serveur, aucun transfert de données.
+          </div>
+        </div>
+
+        <!-- Col 2: Top Tools Navigation -->
+        <div>
+          <h4 class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 mb-3">
+            Outils & Répertoire
+          </h4>
+          <ul class="space-y-2 font-mono text-[11px]">
+            
+            <li>
+              <a href="/fr/freelance-hourly-rate-calculator" class="opacity-70 hover:opacity-100 hover:underline transition truncate block">
+                &rarr; Taux Horaire
+              </a>
+            </li>
+            
+            <li>
+              <a href="/fr/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition truncate block">
+                &rarr; Créer Facture
+              </a>
+            </li>
+            
+            <li>
+              <a href="/fr/payment-fee-calculator" class="opacity-70 hover:opacity-100 hover:underline transition truncate block">
+                &rarr; Frais de Paiement
+              </a>
+            </li>
+            
+            <li>
+              <a href="/fr/startup-runway-calculator" class="opacity-70 hover:opacity-100 hover:underline transition truncate block">
+                &rarr; Trésorerie Runway
+              </a>
+            </li>
+            
+            <li>
+              <a href="/fr/timezone-meeting-planner" class="opacity-70 hover:opacity-100 hover:underline transition truncate block">
+                &rarr; Fuseaux Horaires
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <!-- Col 3: Global Languages Hub -->
+        <div>
+          <h4 class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 mb-3">
+            Matrice Mondiale Multilingue
+          </h4>
+          <div class="grid grid-cols-2 gap-1.5 font-mono text-[11px]">
+            
+            <a href="/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[EN]</span>
+              <span>English</span>
+            </a>
+            
+            <a href="/zh/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[ZH]</span>
+              <span>简体中文</span>
+            </a>
+            
+            <a href="/es/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[ES]</span>
+              <span>Español</span>
+            </a>
+            
+            <a href="/pt/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[PT]</span>
+              <span>Português</span>
+            </a>
+            
+            <a href="/de/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[DE]</span>
+              <span>Deutsch</span>
+            </a>
+            
+            <a href="/fr/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[FR]</span>
+              <span>Français</span>
+            </a>
+            
+            <a href="/ja/clean-invoice-generator" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1.5 py-0.5">
+              <span>[JA]</span>
+              <span>日本語</span>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- Col 4: Crawlers & Legal Standards -->
+        <div>
+          <h4 class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 mb-3">
+            Conformité & Robots
+          </h4>
+          <ul class="space-y-2 font-mono text-[11px]">
+            <li>
+              <a href="/sitemap.xml" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1">
+                <span>📄</span> <span>sitemap.xml</span>
+              </a>
+            </li>
+            <li>
+              <a href="/robots.txt" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1">
+                <span>🤖</span> <span>robots.txt</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://globalcorehub.com" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 hover:underline transition flex items-center gap-1">
+                <span>🌐</span> <span>globalcorehub.com</span>
+              </a>
+            </li>
+            <li class="pt-1 text-[10px] opacity-50 font-mono">
+              ⚡ Cloudflare Edge &bull; 0ms Cold Start
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-[#e7e5e4] dark:border-[#334155] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] opacity-60 font-mono">
         <div>
           &copy; 2026 <strong>GigCalc Studio</strong>. Traitement 100% local dans le navigateur · Accélération mondiale par Cloudflare Edge.
         </div>
-        <div class="text-[11px] opacity-60 font-mono">
-          🔒 100% Exécution Locale en Bac à Sable : Aucun stockage serveur, aucun transfert de données.
-           · ⚠️ Outils d’aide à la gestion. Consultez un expert-comptable ou un juriste pour vos déclarations officielles.
+        <div class="flex items-center space-x-3">
+          <span>100% Exécution Côté Client</span>
+          <span>&bull;</span>
+          <span>v2.0 Architecture</span>
         </div>
-      </div>
-      <div class="flex space-x-4 font-mono text-[11px]">
-        <a href="/sitemap.xml" class="hover:underline">sitemap.xml</a>
-        <a href="/robots.txt" class="hover:underline">robots.txt</a>
-        <a href="https://globalcorehub.com" target="_blank" class="hover:underline">globalcorehub</a>
       </div>
     </div>
   </footer>
