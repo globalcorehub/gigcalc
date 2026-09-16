@@ -45,12 +45,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
 
   <!-- Immediate Zero-FOUC Theme Initializer -->
   <script>
     (function() {
       try {
-        var t = localStorage.getItem('agy_theme') || 'swiss_minimal';
+        var t = localStorage.getItem('agy_theme') || 'neo_brutalist';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'swiss_minimal') {
           document.documentElement.classList.remove('dark');
@@ -69,7 +71,7 @@
       theme: {
         extend: {
           colors: {
-            brand: '#2563eb'
+            brand: '#eab308'
           }
         }
       }
@@ -78,11 +80,10 @@
 
   <!-- Theme Specific & Dynamic Multi-Theme Styles -->
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { font-family: 'Outfit', -apple-system, sans-serif; }
     
-        body { letter-spacing: -0.015em; }
-        .glass-panel { backdrop-filter: blur(16px); background: rgba(255,255,255,0.7); }
-        .dark .glass-panel { background: rgba(15,23,42,0.7); }
+        .brutal-box { border: 3px solid #000; box-shadow: 4px 4px 0px #000; }
+        .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px #000; }
         
 
     /* Dynamic Multi-Theme Overrides */
@@ -259,20 +260,23 @@
         <script>
         window.showToast = function(msg) {
             const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 z-50 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm px-5 py-3 rounded-xl shadow-xl font-medium transition-all duration-300 transform translate-y-0';
-            toast.textContent = msg;
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#fde047] text-black border-3 border-black text-xs px-5 py-2.5 shadow-[4px_4px_0px_#000] font-black tracking-wide flex items-center space-x-2';
+            toast.innerHTML = '<span>⚡</span><span>' + msg + '</span>';
             document.body.appendChild(toast);
-            setTimeout(() => { toast.classList.add('opacity-0', 'translate-y-2'); setTimeout(() => toast.remove(), 300); }, 2200);
+            setTimeout(() => toast.remove(), 2500);
         };
         </script>
         
+
+  <!-- Google AdSense Monetization (Activated when site traffic qualifies and client ID is set) -->
+  
 </head>
-<body class="bg-[#fafaf9] dark:bg-[#0f172a] text-[#1c1917] dark:text-[#f8fafc] min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#fef9c3] dark:bg-[#18181b] text-[#18181b] dark:text-[#fef08a] min-h-screen flex flex-col transition-colors duration-200">
 
   
 
   <!-- Header Navigation (Responsive Desktop & Mobile) -->
-  <header class="sticky top-0 z-50 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-lg border-b border-[#e7e5e4] dark:border-[#334155]">
+  <header class="sticky top-0 z-50 bg-[#fef08a] dark:bg-[#27272a] border-b border-b-4 border-black">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Terminal Indicator -->
@@ -280,7 +284,7 @@
         
 
         <a href="/zh/" class="flex items-center space-x-2.5 sm:space-x-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#0f172a] hover:bg-[#334155] dark:bg-[#2563eb] dark:hover:bg-[#1d4ed8] text-white font-semibold">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#fde047] hover:bg-[#facc15] text-black font-extrabold border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
             G
           </div>
           <span class="text-base sm:text-lg font-extrabold tracking-tight truncate max-w-[150px] sm:max-w-none">
@@ -303,10 +307,10 @@
           </button>
 
           <!-- Dropdown Panel (Categorized & Compact) -->
-          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
+          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
             <div class="flex items-center justify-between px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               <span>全站开发者工具索引</span>
-              <span>5 全部工具</span>
+              <span>11 全部工具</span>
             </div>
             <div class="max-h-72 overflow-y-auto space-y-0.5">
               
@@ -350,9 +354,57 @@
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
+              <a href="/zh/freelance-client-contract-pricing-calculator-free-online" title="Freelance Client Contract & Pricing Calculator Free Online" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator free online tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/zh/freelance-client-contract-pricing-calculator-generator" title="Freelance Client Contract & Pricing Calculator Generator" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator generator tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/zh/freelance-client-contract-pricing-calculator-viewer" title="Freelance Client Contract & Pricing Calculator Viewer" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator viewer tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/zh/freelance-client-contract-pricing-calculator-without-watermark" title="Freelance Client Contract & Pricing Calculator Without Watermark" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator without watermark tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/zh/freelance-client-contract-pricing-calculator-vs-alternatives" title="Freelance Client Contract & Pricing Calculator Vs Alternatives" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator vs alternatives tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/zh/freelance-client-contract-pricing-calculator-calculator-2" title="Freelance Client Contract & Pricing Calculator Calculator 2" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator calculator 2 tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
             </div>
             <div class="mt-1.5 pt-1.5 border-t border-white/10 px-2 flex items-center justify-between">
-              <a href="/zh/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #2563eb">
+              <a href="/zh/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #eab308">
                 <span>浏览全部</span>
                 <span>&rarr;</span>
               </a>
@@ -372,24 +424,24 @@
       <!-- Action Items & Language Selector & Quick Search & Mobile Hamburger -->
       <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Quick Search Trigger in Header -->
-        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="按工具名称、长尾关键词或文件格式快速查找... (按 / 聚焦)">
+        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="按工具名称、长尾关键词或文件格式快速查找... (按 / 聚焦)">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span class="hidden sm:inline opacity-70">搜索</span>
-          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
+          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-3 border-black hover:border-black opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
         </button>
 
         <!-- Interactive Multi-Theme Selector Dropdown -->
         <div class="relative inline-block text-left" id="theme-selector-container">
-          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-90 transition bg-black/20" title="界面主题风格">
+          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-3 border-black hover:border-black hover:opacity-90 transition bg-black/20" title="界面主题风格">
             <span id="theme-current-icon" class="text-sm leading-none">🖤</span>
             <span id="theme-current-name" class="hidden xl:inline text-xs font-medium">极客终端黑</span>
             <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
             <div class="px-3 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               界面主题风格
             </div>
@@ -426,12 +478,12 @@
 
         <!-- 7-Language International Dropdown -->
         <div class="relative inline-block text-left" id="lang-container">
-          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-90 transition bg-black/20">
+          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-3 border-black hover:border-black hover:opacity-90 transition bg-black/20">
             <span>[ZH]</span>
             <span class="font-bold">ZH</span>
             <span class="text-[9px] opacity-60">&darr;</span>
           </button>
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none z-50 py-1.5 font-mono text-xs shadow-2xl">
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] z-50 py-1.5 font-mono text-xs shadow-2xl">
             
             <a href="/startup-runway-calculator" class="flex items-center justify-between px-3 py-1.5 hover:bg-white/10 transition opacity-75">
               <span>[EN] English</span>
@@ -472,7 +524,7 @@
         </div>
 
         <!-- Mobile Menu Toggle Button (Visible on mobile <768px) -->
-        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-3 border-black hover:border-black hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -484,26 +536,26 @@
     </div>
 
     <!-- Mobile Collapsible Navigation Menu Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[#e7e5e4] dark:border-[#334155] bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-lg px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-b-4 border-black bg-[#fef08a] dark:bg-[#27272a] px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
       <a href="/zh/" class="block px-3 py-2 rounded-xl text-sm font-semibold hover:bg-white/10 transition">首页</a>
 
       <!-- Mobile Theme Switcher Bar -->
       <div class="py-2 border-b border-white/10 mb-2">
         <div class="text-[10px] uppercase font-mono opacity-50 mb-1.5">界面主题风格</div>
         <div class="grid grid-cols-4 gap-1.5">
-          <button onclick="window.switchTheme('terminal_dev', true)" title="极客终端黑" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('terminal_dev', true)" title="极客终端黑" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-1"></span>
             <span class="truncate max-w-full">极客终端</span>
           </button>
-          <button onclick="window.switchTheme('cyber_electric', true)" title="赛博霓虹蓝" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('cyber_electric', true)" title="赛博霓虹蓝" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#38bdf8] mb-1"></span>
             <span class="truncate max-w-full">赛博霓虹</span>
           </button>
-          <button onclick="window.switchTheme('midnight_purple', true)" title="暗夜魅影紫" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('midnight_purple', true)" title="暗夜魅影紫" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#c084fc] mb-1"></span>
             <span class="truncate max-w-full">暗夜魅影</span>
           </button>
-          <button onclick="window.switchTheme('swiss_minimal', true)" title="现代极简白" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('swiss_minimal', true)" title="现代极简白" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] mb-1"></span>
             <span class="truncate max-w-full">现代极简</span>
           </button>
@@ -511,19 +563,19 @@
       </div>
 
       <!-- Quick Search Trigger in Mobile Drawer -->
-      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 text-xs font-mono opacity-80">
+      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-3 border-black hover:border-black bg-black/20 text-xs font-mono opacity-80">
         <span class="flex items-center space-x-2">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span>按工具名称、长尾关键词或文件格式快速查找... (按 / 聚焦)</span>
         </span>
-        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] opacity-50">/</kbd>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-3 border-black hover:border-black opacity-50">/</kbd>
       </button>
 
       <!-- Tools Group in Mobile Drawer -->
-      <div class="pt-2 border-t border-[#e7e5e4] dark:border-[#334155]">
-        <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">全部工具 (5)</div>
+      <div class="pt-2 border-t border-b-4 border-black">
+        <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">全部工具 (11)</div>
         <div class="space-y-1 max-h-60 overflow-y-auto">
           
           <a href="/zh/freelance-hourly-rate-calculator" title="自由职业时薪逆向计算器 - 基于目标收入与实际工时的科学定价模型" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
@@ -551,6 +603,36 @@
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
+          <a href="/zh/freelance-client-contract-pricing-calculator-free-online" title="Freelance Client Contract & Pricing Calculator Free Online" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/zh/freelance-client-contract-pricing-calculator-generator" title="Freelance Client Contract & Pricing Calculator Generator" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/zh/freelance-client-contract-pricing-calculator-viewer" title="Freelance Client Contract & Pricing Calculator Viewer" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/zh/freelance-client-contract-pricing-calculator-without-watermark" title="Freelance Client Contract & Pricing Calculator Without Watermark" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/zh/freelance-client-contract-pricing-calculator-vs-alternatives" title="Freelance Client Contract & Pricing Calculator Vs Alternatives" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/zh/freelance-client-contract-pricing-calculator-calculator-2" title="Freelance Client Contract & Pricing Calculator Calculator 2" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
         </div>
       </div>
     </div>
@@ -575,11 +657,13 @@
     
 
     
+
+    
 <div class="max-w-4xl mx-auto">
-  <div class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] p-4 sm:p-6 md:p-8">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-[#e7e5e4] dark:border-[#334155]">
+  <div class="bg-white dark:bg-[#27272a] rounded-2xl shadow-[5px_5px_0px_#000] border border-3 border-black hover:border-black p-4 sm:p-6 md:p-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-b-4 border-black">
       <div>
-        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-[#f1f5f9] dark:bg-[#334155] text-[#334155] dark:text-[#94a3b8] font-medium font-mono mb-2">
+        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-black text-[#fde047] font-black uppercase text-xs px-2.5 py-0.5 border border-black font-mono mb-2">
           <span>[STARTUP CASH RUNWAY &amp; BURN PROJECTION]</span>
         </div>
         <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">初创项目资金跑道与烧钱率计算器 - 现金生存期与收支平衡测算</h1>
@@ -597,51 +681,51 @@
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
       <div>
         <label class="block text-xs font-bold opacity-75 mb-1.5">当前银行账户可用总现金</label>
-        <input id="run-cash" type="number" min="1000" max="10000000" value="150000" step="5000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        <input id="run-cash" type="number" min="1000" max="10000000" value="150000" step="5000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
       <div>
         <label class="block text-xs font-bold opacity-75 mb-1.5">每月固定总支出 / 烧钱额 (工资/服务器)</label>
-        <input id="run-burn" type="number" min="500" max="1000000" value="18000" step="1000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        <input id="run-burn" type="number" min="500" max="1000000" value="18000" step="1000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
       <div>
         <label class="block text-xs font-bold opacity-75 mb-1.5">每月稳定经常性收入 (MRR)</label>
-        <input id="run-rev" type="number" min="0" max="1000000" value="6000" step="500" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        <input id="run-rev" type="number" min="0" max="1000000" value="6000" step="500" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
     </div>
 
     <!-- Output -->
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div class="p-6 rounded-2xl border-2 border-[#10b981]/50 bg-[#10b981]/10 text-center">
-        <span class="text-xs font-bold uppercase font-mono tracking-wider block" style="color:#2563eb">资金安全生命周期 (Runway)</span>
-        <div class="text-4xl font-black font-mono mt-2" style="color:#2563eb">
+        <span class="text-xs font-bold uppercase font-mono tracking-wider block" style="color:#eab308">资金安全生命周期 (Runway)</span>
+        <div class="text-4xl font-black font-mono mt-2" style="color:#eab308">
           <span id="res-runway">12.5</span> 个月
         </div>
       </div>
-      <div class="p-6 rounded-2xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 text-center">
+      <div class="p-6 rounded-2xl border border-3 border-black hover:border-black bg-white/5 text-center">
         <span class="text-xs font-bold opacity-70 block">每月净烧钱速率 (Net Burn)</span>
         <div id="res-net-burn" class="text-3xl font-black font-mono mt-2 text-red-400">-$12,000 / mo</div>
       </div>
     </div>
 
     
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#e7e5e4] dark:border-[#334155] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-b-4 border-black grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       <div>
         <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">关于 初创项目资金跑道与烧钱率计算器 - 现金生存期与收支平衡测算</h2>
         <p class="text-xs opacity-75 leading-relaxed">专为自由职业者、数字游民与出海独立开发者打造的 <strong>创业资金跑道计算</strong> 在线纯前端财务工具。毫秒级即时测算。</p>
         <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">支持测算的商业与财务维度</h3>
-        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>创业资金跑道计算</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>烧钱率计算器</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>创业公司现金流测算</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>资金断裂时间预测</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>独立开发盈亏平衡</li></ul>
+        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>创业资金跑道计算</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>烧钱率计算器</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>创业公司现金流测算</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>资金断裂时间预测</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>独立开发盈亏平衡</li></ul>
       </div>
       <div>
         <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">架构规范与隐私安全说明</h2>
         <div class="space-y-3">
-          <div class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#2563eb">
+          <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
+            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
               <span>✓</span> 100% 本地运算与商业财务保密
             </h4>
             <p class="text-[11px] opacity-70 mt-1 leading-normal">您的时薪底价、客户账单明细与现金流数据绝不上传服务器，全流程在浏览器物理隔离运行。</p>
           </div>
-          <div class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#2563eb">
+          <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
+            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
               <span>⚡</span> 零延迟实时商业计算引擎
             </h4>
             <p class="text-[11px] opacity-70 mt-1 leading-normal">采用高精度财务与时区算法，毫秒推导收支平衡点与资金跑道。</p>
@@ -682,21 +766,23 @@
 })();
 </script>
         
+
+    
   </main>
 
   <!-- Internal Linking Matrix -->
-  <section class="border-t border-[#e7e5e4] dark:border-[#334155] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
+  <section class="border-t border-b-4 border-black py-12 px-4 sm:px-6 lg:px-8 opacity-95">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-sm font-bold uppercase tracking-wider opacity-80 font-mono">
           [+] 全站开发者工具索引
         </h3>
-        <span class="text-xs opacity-60 font-mono">5 全部工具</span>
+        <span class="text-xs opacity-60 font-mono">11 全部工具</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         
-        <a href="/zh/freelance-hourly-rate-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/zh/freelance-hourly-rate-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             自由职业时薪逆向计算器 - 基于目标收入与实际工时的科学定价模型
           </div>
@@ -705,7 +791,7 @@
           </p>
         </a>
         
-        <a href="/zh/clean-invoice-generator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/zh/clean-invoice-generator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             极简专业发票与收据生成器 - 一键导出无水印矢量 PDF 账单
           </div>
@@ -714,7 +800,7 @@
           </p>
         </a>
         
-        <a href="/zh/payment-fee-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/zh/payment-fee-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             跨境支付与收单手续费计算器 - Stripe、PayPal 与 Wise 实收到账核算
           </div>
@@ -723,7 +809,7 @@
           </p>
         </a>
         
-        <a href="/zh/startup-runway-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/zh/startup-runway-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             初创项目资金跑道与烧钱率计算器 - 现金生存期与收支平衡测算
           </div>
@@ -732,7 +818,7 @@
           </p>
         </a>
         
-        <a href="/zh/timezone-meeting-planner" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/zh/timezone-meeting-planner" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             出海远程办公时区重叠规划器 - 跨国工作协同与会议黄金窗口测算
           </div>
@@ -741,12 +827,66 @@
           </p>
         </a>
         
+        <a href="/zh/freelance-client-contract-pricing-calculator-free-online" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Free Online
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator free online tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/zh/freelance-client-contract-pricing-calculator-generator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Generator
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator generator tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/zh/freelance-client-contract-pricing-calculator-viewer" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Viewer
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator viewer tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/zh/freelance-client-contract-pricing-calculator-without-watermark" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Without Watermark
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator without watermark tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/zh/freelance-client-contract-pricing-calculator-vs-alternatives" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Vs Alternatives
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator vs alternatives tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/zh/freelance-client-contract-pricing-calculator-calculator-2" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Calculator 2
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator calculator 2 tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
       </div>
     </div>
   </section>
 
   <!-- Global Multi-Language Matrix -->
-  <section class="border-t border-[#e7e5e4] dark:border-[#334155] py-10 px-4 sm:px-6 lg:px-8 opacity-95 bg-black/[0.02] dark:bg-white/[0.02]">
+  <section class="border-t border-b-4 border-black py-10 px-4 sm:px-6 lg:px-8 opacity-95 bg-black/[0.02] dark:bg-white/[0.02]">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
         <div>
@@ -754,7 +894,7 @@
             <span>🌐</span> <span>全球多语言节点矩阵</span>
           </h3>
           <p class="text-xs opacity-60 mt-0.5 font-mono">
-            7 大全球语种 · 42 个本地化端点 · 100% 浏览器纯前端
+            7 大全球语种 · 84 个本地化端点 · 100% 浏览器纯前端
           </p>
         </div>
         <span class="text-xs font-mono opacity-50">[ZH] 简体中文 (zh)</span>
@@ -762,46 +902,46 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2.5">
         
-        <a href="/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[EN]</div>
           <div class="text-xs font-bold truncate group-hover:underline">English</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/zh/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ring-2 ring-[#10b981]/50">
+        <a href="/zh/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ring-2 ring-[#10b981]/50">
           <div class="text-xl mb-1">[ZH]</div>
           <div class="text-xs font-bold truncate group-hover:underline">简体中文</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/es/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/es/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[ES]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Español</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/pt/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/pt/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[PT]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Português</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/de/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/de/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[DE]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Deutsch</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/fr/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/fr/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[FR]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Français</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
-        <a href="/ja/startup-runway-calculator" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/ja/startup-runway-calculator" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[JA]</div>
           <div class="text-xs font-bold truncate group-hover:underline">日本語</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全部工具</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全部工具</div>
         </a>
         
       </div>
@@ -809,7 +949,7 @@
   </section>
 
   <!-- Comprehensive Multi-Column Footer -->
-  <footer class="border-t border-[#e7e5e4] dark:border-[#334155] pt-12 pb-8 text-xs opacity-90">
+  <footer class="border-t border-b-4 border-black pt-12 pb-8 text-xs opacity-90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Prominent Medical / Financial Compliance Disclaimer Banner -->
@@ -831,7 +971,7 @@
           <p class="text-[11px] opacity-70 leading-relaxed max-w-xs">
             基于现有银行存款余额、每月固定研发服务器开销与稳定经常性收入(MRR)，精确测算项目资金能够维持的生存月数。
           </p>
-          <div class="p-2.5 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono text-[11px] text-[#10b981]">
+          <div class="p-2.5 rounded-xl border border-3 border-black hover:border-black bg-white/5 font-mono text-[11px] text-[#10b981]">
             🔒 100% 浏览器本地沙箱运行：零服务器存储，零数据上传，绝不搜集任何隐私。
           </div>
         </div>
@@ -950,7 +1090,7 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t border-[#e7e5e4] dark:border-[#334155] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] opacity-60 font-mono">
+      <div class="border-t border-b-4 border-black pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] opacity-60 font-mono">
         <div>
           &copy; 2026 <strong>GigCalc Studio</strong>. 极速纯前端离线计算 · Cloudflare 全球边缘节点加速交付。
         </div>
@@ -964,7 +1104,7 @@
   </footer>
 
   <!-- Floating Back to Top Button -->
-  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="返回顶部" title="返回顶部">
+  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="返回顶部" title="返回顶部">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
@@ -1090,7 +1230,7 @@
       if (saved && THEME_NAMES[saved]) {
         window.switchTheme(saved, false);
       } else {
-        window.switchTheme('swiss_minimal', false);
+        window.switchTheme('neo_brutalist', false);
       }
     } catch (e) {}
 

@@ -45,12 +45,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
 
   <!-- Immediate Zero-FOUC Theme Initializer -->
   <script>
     (function() {
       try {
-        var t = localStorage.getItem('agy_theme') || 'swiss_minimal';
+        var t = localStorage.getItem('agy_theme') || 'neo_brutalist';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'swiss_minimal') {
           document.documentElement.classList.remove('dark');
@@ -69,7 +71,7 @@
       theme: {
         extend: {
           colors: {
-            brand: '#2563eb'
+            brand: '#eab308'
           }
         }
       }
@@ -78,11 +80,10 @@
 
   <!-- Theme Specific & Dynamic Multi-Theme Styles -->
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { font-family: 'Outfit', -apple-system, sans-serif; }
     
-        body { letter-spacing: -0.015em; }
-        .glass-panel { backdrop-filter: blur(16px); background: rgba(255,255,255,0.7); }
-        .dark .glass-panel { background: rgba(15,23,42,0.7); }
+        .brutal-box { border: 3px solid #000; box-shadow: 4px 4px 0px #000; }
+        .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px #000; }
         
 
     /* Dynamic Multi-Theme Overrides */
@@ -259,20 +260,23 @@
         <script>
         window.showToast = function(msg) {
             const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 z-50 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm px-5 py-3 rounded-xl shadow-xl font-medium transition-all duration-300 transform translate-y-0';
-            toast.textContent = msg;
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#fde047] text-black border-3 border-black text-xs px-5 py-2.5 shadow-[4px_4px_0px_#000] font-black tracking-wide flex items-center space-x-2';
+            toast.innerHTML = '<span>⚡</span><span>' + msg + '</span>';
             document.body.appendChild(toast);
-            setTimeout(() => { toast.classList.add('opacity-0', 'translate-y-2'); setTimeout(() => toast.remove(), 300); }, 2200);
+            setTimeout(() => toast.remove(), 2500);
         };
         </script>
         
+
+  <!-- Google AdSense Monetization (Activated when site traffic qualifies and client ID is set) -->
+  
 </head>
-<body class="bg-[#fafaf9] dark:bg-[#0f172a] text-[#1c1917] dark:text-[#f8fafc] min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#fef9c3] dark:bg-[#18181b] text-[#18181b] dark:text-[#fef08a] min-h-screen flex flex-col transition-colors duration-200">
 
   
 
   <!-- Header Navigation (Responsive Desktop & Mobile) -->
-  <header class="sticky top-0 z-50 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-lg border-b border-[#e7e5e4] dark:border-[#334155]">
+  <header class="sticky top-0 z-50 bg-[#fef08a] dark:bg-[#27272a] border-b border-b-4 border-black">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Terminal Indicator -->
@@ -280,7 +284,7 @@
         
 
         <a href="/ja/" class="flex items-center space-x-2.5 sm:space-x-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#0f172a] hover:bg-[#334155] dark:bg-[#2563eb] dark:hover:bg-[#1d4ed8] text-white font-semibold">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#fde047] hover:bg-[#facc15] text-black font-extrabold border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
             G
           </div>
           <span class="text-base sm:text-lg font-extrabold tracking-tight truncate max-w-[150px] sm:max-w-none">
@@ -303,10 +307,10 @@
           </button>
 
           <!-- Dropdown Panel (Categorized & Compact) -->
-          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
+          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
             <div class="flex items-center justify-between px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               <span>開発者向け便利ツール索引</span>
-              <span>5 全ツール一覧</span>
+              <span>11 全ツール一覧</span>
             </div>
             <div class="max-h-72 overflow-y-auto space-y-0.5">
               
@@ -350,9 +354,57 @@
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
+              <a href="/ja/freelance-client-contract-pricing-calculator-free-online" title="Freelance Client Contract & Pricing Calculator Free Online" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator free online tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/ja/freelance-client-contract-pricing-calculator-generator" title="Freelance Client Contract & Pricing Calculator Generator" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator generator tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/ja/freelance-client-contract-pricing-calculator-viewer" title="Freelance Client Contract & Pricing Calculator Viewer" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator viewer tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/ja/freelance-client-contract-pricing-calculator-without-watermark" title="Freelance Client Contract & Pricing Calculator Without Watermark" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator without watermark tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/ja/freelance-client-contract-pricing-calculator-vs-alternatives" title="Freelance Client Contract & Pricing Calculator Vs Alternatives" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator vs alternatives tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
+              <a href="/ja/freelance-client-contract-pricing-calculator-calculator-2" title="Freelance Client Contract & Pricing Calculator Calculator 2" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+                <div class="truncate mr-2">
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">Freelance Client</div>
+                  <div class="text-[10px] opacity-50 truncate">Use the best online Freelance Client Contract & Pricing Calculator calculator 2 tool. Fast, accurate, and completely free in your browser.</div>
+                </div>
+                <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
+              </a>
+              
             </div>
             <div class="mt-1.5 pt-1.5 border-t border-white/10 px-2 flex items-center justify-between">
-              <a href="/ja/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #2563eb">
+              <a href="/ja/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #eab308">
                 <span>すべてのツールを見る</span>
                 <span>&rarr;</span>
               </a>
@@ -372,24 +424,24 @@
       <!-- Action Items & Language Selector & Quick Search & Mobile Hamburger -->
       <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Quick Search Trigger in Header -->
-        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)">
+        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span class="hidden sm:inline opacity-70">検索</span>
-          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
+          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-3 border-black hover:border-black opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
         </button>
 
         <!-- Interactive Multi-Theme Selector Dropdown -->
         <div class="relative inline-block text-left" id="theme-selector-container">
-          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-90 transition bg-black/20" title="テーマスタイル">
+          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-3 border-black hover:border-black hover:opacity-90 transition bg-black/20" title="テーマスタイル">
             <span id="theme-current-icon" class="text-sm leading-none">🖤</span>
             <span id="theme-current-name" class="hidden xl:inline text-xs font-medium">黒 (ターミナル)</span>
             <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
             <div class="px-3 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               テーマスタイル
             </div>
@@ -426,12 +478,12 @@
 
         <!-- 7-Language International Dropdown -->
         <div class="relative inline-block text-left" id="lang-container">
-          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-90 transition bg-black/20">
+          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-3 border-black hover:border-black hover:opacity-90 transition bg-black/20">
             <span>[JA]</span>
             <span class="font-bold">JA</span>
             <span class="text-[9px] opacity-60">&darr;</span>
           </button>
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none z-50 py-1.5 font-mono text-xs shadow-2xl">
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-[5px_5px_0px_#000] z-50 py-1.5 font-mono text-xs shadow-2xl">
             
             <a href="/timezone-meeting-planner" class="flex items-center justify-between px-3 py-1.5 hover:bg-white/10 transition opacity-75">
               <span>[EN] English</span>
@@ -472,7 +524,7 @@
         </div>
 
         <!-- Mobile Menu Toggle Button (Visible on mobile <768px) -->
-        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-3 border-black hover:border-black hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -484,26 +536,26 @@
     </div>
 
     <!-- Mobile Collapsible Navigation Menu Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[#e7e5e4] dark:border-[#334155] bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-lg px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-b-4 border-black bg-[#fef08a] dark:bg-[#27272a] px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
       <a href="/ja/" class="block px-3 py-2 rounded-xl text-sm font-semibold hover:bg-white/10 transition">ホーム</a>
 
       <!-- Mobile Theme Switcher Bar -->
       <div class="py-2 border-b border-white/10 mb-2">
         <div class="text-[10px] uppercase font-mono opacity-50 mb-1.5">テーマスタイル</div>
         <div class="grid grid-cols-4 gap-1.5">
-          <button onclick="window.switchTheme('terminal_dev', true)" title="黒 (ターミナル)" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('terminal_dev', true)" title="黒 (ターミナル)" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-1"></span>
             <span class="truncate max-w-full">ターミナル</span>
           </button>
-          <button onclick="window.switchTheme('cyber_electric', true)" title="サイバーネオン" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('cyber_electric', true)" title="サイバーネオン" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#38bdf8] mb-1"></span>
             <span class="truncate max-w-full">サイバー</span>
           </button>
-          <button onclick="window.switchTheme('midnight_purple', true)" title="ミッドナイトパープル" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('midnight_purple', true)" title="ミッドナイトパープル" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#c084fc] mb-1"></span>
             <span class="truncate max-w-full">パープル</span>
           </button>
-          <button onclick="window.switchTheme('swiss_minimal', true)" title="ミニマル (白)" class="p-1.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('swiss_minimal', true)" title="ミニマル (白)" class="p-1.5 rounded-lg border border-3 border-black hover:border-black bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] mb-1"></span>
             <span class="truncate max-w-full">ミニマル</span>
           </button>
@@ -511,19 +563,19 @@
       </div>
 
       <!-- Quick Search Trigger in Mobile Drawer -->
-      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-black/20 text-xs font-mono opacity-80">
+      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-3 border-black hover:border-black bg-black/20 text-xs font-mono opacity-80">
         <span class="flex items-center space-x-2">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span>ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)</span>
         </span>
-        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] opacity-50">/</kbd>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-3 border-black hover:border-black opacity-50">/</kbd>
       </button>
 
       <!-- Tools Group in Mobile Drawer -->
-      <div class="pt-2 border-t border-[#e7e5e4] dark:border-[#334155]">
-        <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">全ツール一覧 (5)</div>
+      <div class="pt-2 border-t border-b-4 border-black">
+        <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">全ツール一覧 (11)</div>
         <div class="space-y-1 max-h-60 overflow-y-auto">
           
           <a href="/ja/freelance-hourly-rate-calculator" title="フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
@@ -551,6 +603,36 @@
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
+          <a href="/ja/freelance-client-contract-pricing-calculator-free-online" title="Freelance Client Contract & Pricing Calculator Free Online" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/ja/freelance-client-contract-pricing-calculator-generator" title="Freelance Client Contract & Pricing Calculator Generator" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/ja/freelance-client-contract-pricing-calculator-viewer" title="Freelance Client Contract & Pricing Calculator Viewer" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/ja/freelance-client-contract-pricing-calculator-without-watermark" title="Freelance Client Contract & Pricing Calculator Without Watermark" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/ja/freelance-client-contract-pricing-calculator-vs-alternatives" title="Freelance Client Contract & Pricing Calculator Vs Alternatives" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
+          <a href="/ja/freelance-client-contract-pricing-calculator-calculator-2" title="Freelance Client Contract & Pricing Calculator Calculator 2" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">Freelance Client</span>
+            <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
+          </a>
+          
         </div>
       </div>
     </div>
@@ -575,11 +657,13 @@
     
 
     
+
+    
 <div class="max-w-4xl mx-auto">
-  <div class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] p-4 sm:p-6 md:p-8">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-[#e7e5e4] dark:border-[#334155]">
+  <div class="bg-white dark:bg-[#27272a] rounded-2xl shadow-[5px_5px_0px_#000] border border-3 border-black hover:border-black p-4 sm:p-6 md:p-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-b-4 border-black">
       <div>
-        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-[#f1f5f9] dark:bg-[#334155] text-[#334155] dark:text-[#94a3b8] font-medium font-mono mb-2">
+        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-black text-[#fde047] font-black uppercase text-xs px-2.5 py-0.5 border border-black font-mono mb-2">
           <span>[WORLD CLOCK &amp; TIMEZONE OVERLAP VISUALIZER]</span>
         </div>
         <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール</h1>
@@ -595,15 +679,15 @@
 
     <!-- Timezones Overview -->
     <div class="mt-6 space-y-4">
-      <div class="p-4 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 flex items-center justify-between">
+      <div class="p-4 rounded-xl border border-3 border-black hover:border-black bg-white/5 flex items-center justify-between">
         <div>
           <span class="text-xs font-mono opacity-60">UTC -4</span>
           <h4 class="text-sm font-bold">New York / Eastern Time (EDT)</h4>
         </div>
-        <span id="time-ny" class="text-xl font-black font-mono" style="color:#2563eb">--:--</span>
+        <span id="time-ny" class="text-xl font-black font-mono" style="color:#eab308">--:--</span>
       </div>
 
-      <div class="p-4 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 flex items-center justify-between">
+      <div class="p-4 rounded-xl border border-3 border-black hover:border-black bg-white/5 flex items-center justify-between">
         <div>
           <span class="text-xs font-mono opacity-60">UTC +1</span>
           <h4 class="text-sm font-bold">London / British Summer Time (BST)</h4>
@@ -611,7 +695,7 @@
         <span id="time-lon" class="text-xl font-black font-mono">--:--</span>
       </div>
 
-      <div class="p-4 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 flex items-center justify-between">
+      <div class="p-4 rounded-xl border border-3 border-black hover:border-black bg-white/5 flex items-center justify-between">
         <div>
           <span class="text-xs font-mono opacity-60">UTC +8</span>
           <h4 class="text-sm font-bold">Singapore &amp; Shanghai / China Standard Time (CST)</h4>
@@ -620,29 +704,29 @@
       </div>
     </div>
 
-    <div class="mt-6 p-4 rounded-xl bg-white/5 border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] text-xs leading-relaxed opacity-80">
+    <div class="mt-6 p-4 rounded-xl bg-white/5 border border-3 border-black hover:border-black text-xs leading-relaxed opacity-80">
       💡 <strong>Optimal Overlap Window:</strong> 13:00 - 15:00 UTC allows cross-continent alignment between London afternoon, New York morning, and Singapore late evening.
     </div>
 
     
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#e7e5e4] dark:border-[#334155] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-b-4 border-black grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       <div>
         <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール について</h2>
         <p class="text-xs opacity-75 leading-relaxed">フリーランスや個人事業主向けの <strong>時差計算 オンライン 会議</strong> を高精度に算出する完全無料のWebツールです。情報漏洩なし。</p>
         <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">対応しているビジネス・財務計算項目</h3>
-        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>時差計算 オンライン 会議</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>世界時計 リアルタイム</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>海外 ミーティング 時間 調整</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#2563eb">+</span>リモートワーク 時差 調整</li></ul>
+        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>時差計算 オンライン 会議</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>世界時計 リアルタイム</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>海外 ミーティング 時間 調整</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>リモートワーク 時差 調整</li></ul>
       </div>
       <div>
         <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">アーキテクチャとプライバシー保護</h2>
         <div class="space-y-3">
-          <div class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#2563eb">
+          <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
+            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
               <span>✓</span> 100% 端末内処理・事業財務の完全秘密保持
             </h4>
             <p class="text-[11px] opacity-70 mt-1 leading-normal">時給設定や顧客への請求書情報などは外部サーバーに送信されず、端末内でのみ安全に完結します。</p>
           </div>
-          <div class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#2563eb">
+          <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
+            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
               <span>⚡</span> ミリ秒単位のリアルタイム財務試算
             </h4>
             <p class="text-[11px] opacity-70 mt-1 leading-normal">手数料や資金繰りランウェイを瞬時に算出します。</p>
@@ -667,21 +751,23 @@
 })();
 </script>
         
+
+    
   </main>
 
   <!-- Internal Linking Matrix -->
-  <section class="border-t border-[#e7e5e4] dark:border-[#334155] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
+  <section class="border-t border-b-4 border-black py-12 px-4 sm:px-6 lg:px-8 opacity-95">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-sm font-bold uppercase tracking-wider opacity-80 font-mono">
           [+] 開発者向け便利ツール索引
         </h3>
-        <span class="text-xs opacity-60 font-mono">5 全ツール一覧</span>
+        <span class="text-xs opacity-60 font-mono">11 全ツール一覧</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         
-        <a href="/ja/freelance-hourly-rate-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/ja/freelance-hourly-rate-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定
           </div>
@@ -690,7 +776,7 @@
           </p>
         </a>
         
-        <a href="/ja/clean-invoice-generator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/ja/clean-invoice-generator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             プロ仕様シンプル請求書作成ツール - 透かしなしPDF請求書を瞬時に出力・印刷
           </div>
@@ -699,7 +785,7 @@
           </p>
         </a>
         
-        <a href="/ja/payment-fee-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/ja/payment-fee-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             決済手数料・実受取額計算機 - Stripe・PayPal・Wiseの送金手数料と手残り試算
           </div>
@@ -708,7 +794,7 @@
           </p>
         </a>
         
-        <a href="/ja/startup-runway-calculator" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/ja/startup-runway-calculator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             スタートアップ資金ランウェイ & バーンレート計算機 - 資金ショート時期の予測
           </div>
@@ -717,7 +803,7 @@
           </p>
         </a>
         
-        <a href="/ja/timezone-meeting-planner" class="p-3.5 rounded-lg border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] transition group block">
+        <a href="/ja/timezone-meeting-planner" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール
           </div>
@@ -726,12 +812,66 @@
           </p>
         </a>
         
+        <a href="/ja/freelance-client-contract-pricing-calculator-free-online" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Free Online
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator free online tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/ja/freelance-client-contract-pricing-calculator-generator" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Generator
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator generator tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/ja/freelance-client-contract-pricing-calculator-viewer" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Viewer
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator viewer tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/ja/freelance-client-contract-pricing-calculator-without-watermark" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Without Watermark
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator without watermark tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/ja/freelance-client-contract-pricing-calculator-vs-alternatives" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Vs Alternatives
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator vs alternatives tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
+        <a href="/ja/freelance-client-contract-pricing-calculator-calculator-2" class="p-3.5 rounded-lg border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] transition group block">
+          <div class="text-xs font-bold truncate group-hover:underline">
+            Freelance Client Contract & Pricing Calculator Calculator 2
+          </div>
+          <p class="text-[11px] opacity-60 mt-1 line-clamp-1">
+            Use the best online Freelance Client Contract & Pricing Calculator calculator 2 tool. Fast, accurate, and completely free in your browser.
+          </p>
+        </a>
+        
       </div>
     </div>
   </section>
 
   <!-- Global Multi-Language Matrix -->
-  <section class="border-t border-[#e7e5e4] dark:border-[#334155] py-10 px-4 sm:px-6 lg:px-8 opacity-95 bg-black/[0.02] dark:bg-white/[0.02]">
+  <section class="border-t border-b-4 border-black py-10 px-4 sm:px-6 lg:px-8 opacity-95 bg-black/[0.02] dark:bg-white/[0.02]">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
         <div>
@@ -739,7 +879,7 @@
             <span>🌐</span> <span>グローバル多言語ネットワーク</span>
           </h3>
           <p class="text-xs opacity-60 mt-0.5 font-mono">
-            7大グローバル言語 · 42 本地化エンドポイント · 100% クライアント完結
+            7大グローバル言語 · 84 本地化エンドポイント · 100% クライアント完結
           </p>
         </div>
         <span class="text-xs font-mono opacity-50">[JA] 日本語 (ja)</span>
@@ -747,46 +887,46 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2.5">
         
-        <a href="/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[EN]</div>
           <div class="text-xs font-bold truncate group-hover:underline">English</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/zh/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/zh/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[ZH]</div>
           <div class="text-xs font-bold truncate group-hover:underline">简体中文</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/es/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/es/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[ES]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Español</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/pt/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/pt/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[PT]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Português</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/de/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/de/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[DE]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Deutsch</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/fr/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
+        <a href="/fr/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ">
           <div class="text-xl mb-1">[FR]</div>
           <div class="text-xs font-bold truncate group-hover:underline">Français</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
-        <a href="/ja/timezone-meeting-planner" class="p-3 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white dark:bg-[#1e293b] hover:border-[#10b981] transition group flex flex-col justify-between text-center ring-2 ring-[#10b981]/50">
+        <a href="/ja/timezone-meeting-planner" class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white dark:bg-[#27272a] hover:border-[#10b981] transition group flex flex-col justify-between text-center ring-2 ring-[#10b981]/50">
           <div class="text-xl mb-1">[JA]</div>
           <div class="text-xs font-bold truncate group-hover:underline">日本語</div>
-          <div class="text-[10px] opacity-50 font-mono mt-1">5 全ツール一覧</div>
+          <div class="text-[10px] opacity-50 font-mono mt-1">11 全ツール一覧</div>
         </a>
         
       </div>
@@ -794,7 +934,7 @@
   </section>
 
   <!-- Comprehensive Multi-Column Footer -->
-  <footer class="border-t border-[#e7e5e4] dark:border-[#334155] pt-12 pb-8 text-xs opacity-90">
+  <footer class="border-t border-b-4 border-black pt-12 pb-8 text-xs opacity-90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Prominent Medical / Financial Compliance Disclaimer Banner -->
@@ -816,7 +956,7 @@
           <p class="text-[11px] opacity-70 leading-relaxed max-w-xs">
             ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。
           </p>
-          <div class="p-2.5 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] bg-white/5 font-mono text-[11px] text-[#10b981]">
+          <div class="p-2.5 rounded-xl border border-3 border-black hover:border-black bg-white/5 font-mono text-[11px] text-[#10b981]">
             🔒 100% ブラウザ内ローカル処理：サーバー保存ゼロ、データ送信ゼロで完全なプライバシーを保護。
           </div>
         </div>
@@ -935,7 +1075,7 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t border-[#e7e5e4] dark:border-[#334155] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] opacity-60 font-mono">
+      <div class="border-t border-b-4 border-black pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] opacity-60 font-mono">
         <div>
           &copy; 2026 <strong>GigCalc Studio</strong>. 完全ブラウザ内ローカル処理 · Cloudflare グローバルエッジ高速配信。
         </div>
@@ -949,7 +1089,7 @@
   </footer>
 
   <!-- Floating Back to Top Button -->
-  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] hover:border-[#2563eb] shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="トップへ戻る" title="トップへ戻る">
+  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#27272a] border border-3 border-black hover:border-black shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="トップへ戻る" title="トップへ戻る">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
@@ -1075,7 +1215,7 @@
       if (saved && THEME_NAMES[saved]) {
         window.switchTheme(saved, false);
       } else {
-        window.switchTheme('swiss_minimal', false);
+        window.switchTheme('neo_brutalist', false);
       }
     } catch (e) {}
 
