@@ -588,7 +588,7 @@
     </div>
 
     <div class="mt-6 p-4 rounded-xl bg-white/5 border border-3 border-black hover:border-black text-xs leading-relaxed opacity-80">
-      💡 <strong>Optimal Overlap Window:</strong> 13:00 - 15:00 UTC allows cross-continent alignment between London afternoon, New York morning, and Singapore late evening.
+      💡 <strong>Optimal Overlap Window:</strong> 13:00 - 15:00 UTC (example; daylight saving changes local times) allows cross-continent alignment between London afternoon, New York morning, and Singapore late evening.
     </div>
 
     
@@ -625,6 +625,12 @@
 (function() {
   function update() {
     const now = new Date();
+    [['ny','America/New_York','New York'],['lon','Europe/London','London'],['sg','Asia/Singapore','Singapore']].forEach(([id, timeZone, city]) => {
+      const card = document.getElementById('time-' + id).parentElement;
+      const zonePart = type => new Intl.DateTimeFormat('en-US', {timeZone, timeZoneName:type}).formatToParts(now).find(p => p.type === 'timeZoneName').value;
+      card.querySelector('span').textContent = zonePart('shortOffset');
+      card.querySelector('h4').textContent = city + ' / ' + zonePart('short');
+    });
     document.getElementById('time-ny').textContent = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false });
     document.getElementById('time-lon').textContent = now.toLocaleTimeString('en-US', { timeZone: 'Europe/London', hour12: false });
     document.getElementById('time-sg').textContent = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Singapore', hour12: false });

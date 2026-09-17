@@ -647,18 +647,20 @@
   const gRes = document.getElementById('res-gross');
   const btnCopy = document.getElementById('btn-copy-rate');
 
+  const validation = document.createElement('p');
+  validation.setAttribute('role', 'status'); validation.setAttribute('aria-live', 'polite');
+  document.querySelector('main').appendChild(validation);
+  const errorMessage = ({"en":"Enter all required values within the displayed ranges.","zh":"请在显示范围内填写所有必填数值。","de":"Bitte alle Pflichtwerte innerhalb der angezeigten Bereiche eingeben.","es":"Introduzca todos los valores dentro de los límites indicados.","fr":"Saisissez toutes les valeurs dans les limites indiquées.","ja":"すべての必須値を表示範囲内で入力してください。","pt":"Preencha todos os valores dentro dos limites indicados."})[document.documentElement.lang.split('-')[0]] || "Enter all required values within the displayed ranges.";
+  function validValues(entries) { const valid = entries.map(([el, min, max, integer]) => { const n = Number(el.value); const ok = el.value.trim() !== '' && Number.isFinite(n) && n >= min && n <= max && (!integer || Number.isInteger(n)); el.setAttribute('aria-invalid', String(!ok)); return ok; }).every(Boolean); validation.textContent = valid ? '' : errorMessage; return valid; }
   function calculate() {
-    const netIncome = Math.max(1000, parseFloat(incEl.value) || 50000);
-    const weeklyBillable = Math.max(1, Math.min(80, parseFloat(hrsEl.value) || 20));
-    const vacWeeks = Math.max(0, Math.min(50, parseFloat(vacEl.value) || 4));
-    const taxRate = Math.min(0.9, Math.max(0, (parseFloat(taxEl.value) || 20) / 100));
-    const monthlyOverhead = Math.max(0, parseFloat(ovhEl.value) || 0);
-
-    const workingWeeks = Math.max(1, 52 - vacWeeks);
+    if (!validValues([[incEl,0,1e12],[hrsEl,1,80],[vacEl,0,51],[taxEl,0,99.99],[ovhEl,0,1e12]])) { [hRes,dRes,gRes].forEach(el => el.textContent = ''); btnCopy.disabled = true; return; }
+    btnCopy.disabled = false;
+    const netIncome = Number(incEl.value), weeklyBillable = Number(hrsEl.value), vacWeeks = Number(vacEl.value), taxRate = Number(taxEl.value)/100, monthlyOverhead = Number(ovhEl.value);
+    const workingWeeks = 52 - vacWeeks;
     const annualBillableHours = workingWeeks * weeklyBillable;
 
     // Gross needed = (Net / (1 - taxRate)) + (monthlyOverhead * 12)
-    const neededGross = (netIncome / Math.max(0.1, 1 - taxRate)) + (monthlyOverhead * 12);
+    const neededGross = (netIncome / (1 - taxRate)) + (monthlyOverhead * 12);
     const hourly = neededGross / annualBillableHours;
     const day = hourly * 8;
     const monthlyGross = neededGross / 12;
