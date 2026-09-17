@@ -547,82 +547,86 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-b-4 border-black">
       <div>
         <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-black text-[#fde047] font-black uppercase text-xs px-2.5 py-0.5 border border-black font-mono mb-2">
-          <span>[DAILY HYDRATION OPTIMIZER]</span>
+          <span>[REVERSE HOURLY RATE FINANCIAL MODEL]</span>
         </div>
         <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">Freelance Client Contract & Pricing Calculator Without Watermark</h1>
-        <p class="text-xs sm:text-sm opacity-70 mt-1 max-w-xl">Use the best online Freelance Client Contract & Pricing Calculator without watermark tool. Fast, accurate, and completely free in your browser.</p>
+        <p class="text-xs sm:text-sm opacity-70 mt-1 max-w-xl">Use the best online Freelance Client Contract & Pricing Calculator free online tool. Fast, accurate, and completely free in your browser.</p>
       </div>
       <div class="flex items-center space-x-2">
-        <button id="btn-copy-water" class="px-3 py-1.5 text-xs rounded-xl font-bold border border-3 border-black hover:border-black hover:bg-white/10 transition flex items-center gap-1.5">
-          <span>📋</span> <span id="copy-water-text">計算結果をコピー</span>
+        <button id="btn-copy-rate" class="px-3.5 py-2 text-xs rounded-xl font-bold bg-[#fde047] hover:bg-[#facc15] text-black font-extrabold border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all transition flex items-center gap-1.5">
+          <span>📋</span> <span id="copy-rate-text">サマリーをコピー</span>
         </button>
       </div>
     </div>
 
-    <!-- Medical Compliance Disclaimer Banner -->
+    <!-- Financial Compliance Disclaimer Banner -->
     <div class="mt-4 p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-mono flex items-start space-x-2">
       <span class="text-base leading-none">⚠️</span>
-      <span class="leading-relaxed">⚠️ 免責事項：本ツールの計算結果はフィットネス・健康管理の目安であり、医学的な助言や診断に代わるものではありません。食事制限や激しい運動を始める前に医師にご相談ください。</span>
+      <span class="leading-relaxed">⚠️ 免責事項：本ツールの計算結果は事業計画・見積りの目安であり、公式な税務・法的な助言ではありません。確定申告や正式な契約時は税理士・専門家にご相談ください。</span>
     </div>
 
     <!-- Inputs -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">体重 (kg) (kg)</label>
-        <input id="w-weight" type="number" min="30" max="250" value="70" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        <label class="block text-xs font-bold opacity-75 mb-1.5">目標とする年間手取り収入</label>
+        <input id="rate-income" type="number" min="10000" max="1000000" value="90000" step="5000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
       <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">1日の運動・トレーニング時間 (分)</label>
-        <input id="w-workout" type="number" min="0" max="240" value="45" step="15" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        <label class="block text-xs font-bold opacity-75 mb-1.5">1週間の請求可能稼働時間 (実働)</label>
+        <input id="rate-hours" type="number" min="5" max="60" value="25" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
       <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">生活環境・気候</label>
-        <select id="w-climate" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#10b981]">
-          <option value="0">温暖・一般的な気候</option>
-          <option value="350" selected>高温多湿 または 猛暑・乾燥</option>
-          <option value="150">寒冷地・高地</option>
-        </select>
+        <label class="block text-xs font-bold opacity-75 mb-1.5">年間の想定休暇・療養週数</label>
+        <input id="rate-vacation" type="number" min="0" max="20" value="4" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+      </div>
+      <div>
+        <label class="block text-xs font-bold opacity-75 mb-1.5">推定所得税・住民税・社会保険料率 (%)</label>
+        <input id="rate-tax" type="number" min="0" max="60" value="25" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block text-xs font-bold opacity-75 mb-1.5">毎月の固定事業経費 (通信費・ソフトウェア等)</label>
+        <input id="rate-overhead" type="number" min="0" max="10000" value="500" step="100" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-3 border-black hover:border-black bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
       </div>
     </div>
 
-    <!-- Results Banner -->
-    <div class="mt-6 p-6 rounded-2xl border-2 border-cyan-500/50 bg-cyan-500/10 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
-      <div>
-        <span class="text-xs font-bold uppercase font-mono tracking-wider text-cyan-400 block">1日の科学的推奨水分摂取量</span>
-        <div class="text-4xl font-black font-mono text-cyan-400 mt-1">
-          <span id="res-water-l">2.8</span> L
-        </div>
+    <!-- Outputs -->
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="p-5 rounded-xl border-2 border-[#10b981]/50 bg-[#10b981]/10 text-center">
+        <span class="text-xs font-bold uppercase font-mono tracking-wider block" style="color:#eab308">推奨最低請求時給</span>
+        <div id="res-hourly" class="text-3xl sm:text-4xl font-black font-mono mt-2" style="color:#eab308">$105</div>
       </div>
-      <div class="text-left sm:text-right">
-        <span class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 block">コップ杯数換算 (1杯 250ml)</span>
-        <div class="text-3xl font-black font-mono mt-1 text-white">
-          <span id="res-water-glasses">11</span> 杯
-        </div>
+      <div class="p-5 rounded-xl border border-3 border-black hover:border-black bg-white/5 text-center">
+        <span class="text-xs font-bold opacity-70 block">推奨日給単価目安 (8時間換算)</span>
+        <div id="res-day" class="text-3xl font-black font-mono mt-2">$840</div>
+      </div>
+      <div class="p-5 rounded-xl border border-3 border-black hover:border-black bg-white/5 text-center">
+        <span class="text-xs font-bold opacity-70 block">必要な月間目標総売上高</span>
+        <div id="res-gross" class="text-3xl font-black font-mono mt-2">$10,500</div>
       </div>
     </div>
 
     
     <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-b-4 border-black grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">Freelance Client Contract & Pricing Calculator Without Watermark について</h2>
-        <p class="text-xs opacity-75 leading-relaxed"><strong>Freelance Client Contract & Pricing Calculator without watermark</strong> を高精度に算出する完全無料の科学的計算ツールです。ブラウザ内だけで処理され、体格データの外部送信は一切ありません。</p>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">対応しているフィットネス・健康検索項目</h3>
-        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator for beginners</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator interactive</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator open source</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator tips</li></ul>
+        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">Freelance Client Contract & Pricing Calculator Free Online について</h2>
+        <p class="text-xs opacity-75 leading-relaxed">フリーランスや個人事業主向けの <strong>Freelance Client Contract & Pricing Calculator free online</strong> を高精度に算出する完全無料のWebツールです。情報漏洩なし。</p>
+        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">対応しているビジネス・財務計算項目</h3>
+        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator best</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator fast</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator instant</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#eab308">+</span>Freelance Client Contract & Pricing Calculator calculator</li></ul>
       </div>
       <div>
         <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">アーキテクチャとプライバシー保護</h2>
         <div class="space-y-3">
           <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
             <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
-              <span>✓</span> 100% 端末内計算・完全なプライバシー保護
+              <span>✓</span> 100% 端末内処理・事業財務の完全秘密保持
             </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">体重や体型などの個人ヘルスケア情報は端末内でのみ処理され、サーバーへの送信・保管は行われません。</p>
+            <p class="text-[11px] opacity-70 mt-1 leading-normal">時給設定や顧客への請求書情報などは外部サーバーに送信されず、端末内でのみ安全に完結します。</p>
           </div>
           <div class="p-3 rounded-xl border border-3 border-black hover:border-black bg-white/5">
             <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#eab308">
-              <span>⚡</span> 生理学公式に基づきミリ秒単位で瞬時算出
+              <span>⚡</span> ミリ秒単位のリアルタイム財務試算
             </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">Mifflin-St Jeor式、米国海軍体脂肪計算式、Brzycki式に準拠した高精度な計算エンジンを搭載しています。</p>
+            <p class="text-[11px] opacity-70 mt-1 leading-normal">手数料や資金繰りランウェイを瞬時に算出します。</p>
           </div>
         </div>
       </div>
@@ -633,12 +637,15 @@
 
 <script>
 (function() {
-  const wEl = document.getElementById('w-weight');
-  const wkEl = document.getElementById('w-workout');
-  const clEl = document.getElementById('w-climate');
-  const lEl = document.getElementById('res-water-l');
-  const glEl = document.getElementById('res-water-glasses');
-  const btnCopy = document.getElementById('btn-copy-water');
+  const incEl = document.getElementById('rate-income');
+  const hrsEl = document.getElementById('rate-hours');
+  const vacEl = document.getElementById('rate-vacation');
+  const taxEl = document.getElementById('rate-tax');
+  const ovhEl = document.getElementById('rate-overhead');
+  const hRes = document.getElementById('res-hourly');
+  const dRes = document.getElementById('res-day');
+  const gRes = document.getElementById('res-gross');
+  const btnCopy = document.getElementById('btn-copy-rate');
 
   const validation = document.createElement('p');
   validation.setAttribute('role', 'status'); validation.setAttribute('aria-live', 'polite');
@@ -646,31 +653,30 @@
   const errorMessage = ({"en":"Enter all required values within the displayed ranges.","zh":"请在显示范围内填写所有必填数值。","de":"Bitte alle Pflichtwerte innerhalb der angezeigten Bereiche eingeben.","es":"Introduzca todos los valores dentro de los límites indicados.","fr":"Saisissez toutes les valeurs dans les limites indiquées.","ja":"すべての必須値を表示範囲内で入力してください。","pt":"Preencha todos os valores dentro dos limites indicados."})[document.documentElement.lang.split('-')[0]] || "Enter all required values within the displayed ranges.";
   function validValues(entries) { const valid = entries.map(([el, min, max, integer]) => { const n = Number(el.value); const ok = el.value.trim() !== '' && Number.isFinite(n) && n >= min && n <= max && (!integer || Number.isInteger(n)); el.setAttribute('aria-invalid', String(!ok)); return ok; }).every(Boolean); validation.textContent = valid ? '' : errorMessage; return valid; }
   function calculate() {
-    const w = Math.max(20, Math.min(350, parseFloat(wEl.value) || 70));
-    const wk = Math.max(0, Math.min(360, parseFloat(wkEl.value) || 0));
-    const climateBonus = parseFloat(clEl.value) || 0;
+    if (!validValues([[incEl,0,1e12],[hrsEl,1,80],[vacEl,0,51],[taxEl,0,99.99],[ovhEl,0,1e12]])) { [hRes,dRes,gRes].forEach(el => el.textContent = ''); btnCopy.disabled = true; return; }
+    btnCopy.disabled = false;
+    const netIncome = Number(incEl.value), weeklyBillable = Number(hrsEl.value), vacWeeks = Number(vacEl.value), taxRate = Number(taxEl.value)/100, monthlyOverhead = Number(ovhEl.value);
+    const workingWeeks = 52 - vacWeeks;
+    const annualBillableHours = workingWeeks * weeklyBillable;
 
-    // Baseline: 35ml per kg bodyweight
-    let ml = (w * 35);
-    // + 350ml per 30 mins workout
-    ml += (wk / 30) * 350;
-    // Climate adjustment
-    ml += climateBonus;
+    // Gross needed = (Net / (1 - taxRate)) + (monthlyOverhead * 12)
+    const neededGross = (netIncome / (1 - taxRate)) + (monthlyOverhead * 12);
+    const hourly = neededGross / annualBillableHours;
+    const day = hourly * 8;
+    const monthlyGross = neededGross / 12;
 
-    const liters = (ml / 1000);
-    const glasses = Math.round(ml / 250);
-
-    lEl.textContent = liters.toFixed(1);
-    glEl.textContent = glasses;
+    hRes.textContent = '$' + Math.round(hourly).toLocaleString();
+    dRes.textContent = '$' + Math.round(day).toLocaleString();
+    gRes.textContent = '$' + Math.round(monthlyGross).toLocaleString();
   }
 
-  [wEl, wkEl, clEl].forEach(el => el.addEventListener('input', calculate));
+  [incEl, hrsEl, vacEl, taxEl, ovhEl].forEach(el => el.addEventListener('input', calculate));
   calculate();
 
   btnCopy.addEventListener('click', () => {
-    const text = `Recommended Daily Water: ${lEl.textContent} L (${glEl.textContent} glasses/day)`;
+    const text = `Minimum Hourly Rate: ${hRes.textContent}/h | Day Rate: ${dRes.textContent}/day | Monthly Gross Target: ${gRes.textContent}`;
     navigator.clipboard.writeText(text).then(() => {
-      const span = document.getElementById('copy-water-text');
+      const span = document.getElementById('copy-rate-text');
       const orig = span.textContent;
       span.textContent = 'コピー完了！';
       setTimeout(() => { span.textContent = orig; }, 1500);
