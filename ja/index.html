@@ -171,56 +171,6 @@
   </script>
 
   
-
-  <!-- Fluid Motion & Micro-Interactions Suite -->
-  <style>
-    @keyframes subtle-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    @keyframes ambient-glow {
-      0%, 100% { opacity: 0.35; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.06); }
-    }
-    @keyframes shimmer-sweep {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(200%); }
-    }
-    @keyframes spring-pop {
-      0% { transform: scale(0.6); opacity: 0; }
-      60% { transform: scale(1.2); }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-    }
-    .motion-float {
-      animation: subtle-float 6s ease-in-out infinite;
-    }
-    .motion-glow {
-      animation: ambient-glow 7s ease-in-out infinite;
-    }
-    .motion-card {
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
-      will-change: transform;
-    }
-    .motion-card:hover {
-      transform: translateY(-4px);
-    }
-    .motion-btn {
-      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
-      will-change: transform;
-    }
-    .motion-btn:active {
-      transform: scale(0.96);
-    }
-    .spring-pop {
-      animation: spring-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-  </style>
-
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-yellow-300 selection:text-black">
 
@@ -280,7 +230,7 @@
             <div id="tools-dropdown-panel" class="hidden absolute right-0 mt-2 w-80 rounded-xl bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] p-2.5 z-50">
               <div class="text-[10px] font-mono text-neutral-500 px-3 py-1.5 uppercase font-bold border-b-2 border-black mb-1.5 flex justify-between">
                 <span>全ツール一覧</span>
-                <span>20 UNITS</span>
+                <span>25 UNITS</span>
               </div>
               <div class="max-h-80 overflow-y-auto space-y-1">
                 
@@ -357,6 +307,31 @@
                 <a href="/ja/freelance-client-contract-pricing-calculator-instant-3" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
                   <div class="font-black text-xs">Freelance Client</div>
                   <div class="text-[11px] text-neutral-600 truncate font-sans">Use the best online Freelance Client Contract & Pricing Calculator instant 3 tool. Fast, accurate, and completely free in your browser.</div>
+                </a>
+                
+                <a href="/ja/freelance-hourly-rate-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">時給逆算</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。</div>
+                </a>
+                
+                <a href="/ja/clean-invoice-generator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">請求書作成</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">登録不要・完全無料。顧客名と業務明細を入力するだけで、洗練されたデザインのPDF請求書をその場で作成・印刷可能。</div>
+                </a>
+                
+                <a href="/ja/payment-fee-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">決済手数料</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">海外顧客からの入金時に引かれるStripeやPayPalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。</div>
+                </a>
+                
+                <a href="/ja/startup-runway-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">資金ランウェイ</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。</div>
+                </a>
+                
+                <a href="/ja/timezone-meeting-planner" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">時差・世界時計</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。</div>
                 </a>
                 
                 <a href="/ja/freelance-hourly-rate-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
@@ -543,6 +518,26 @@
         時差・世界時計
       </a>
       
+      <a href="/ja/freelance-hourly-rate-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        時給逆算
+      </a>
+      
+      <a href="/ja/clean-invoice-generator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        請求書作成
+      </a>
+      
+      <a href="/ja/payment-fee-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        決済手数料
+      </a>
+      
+      <a href="/ja/startup-runway-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        資金ランウェイ
+      </a>
+      
+      <a href="/ja/timezone-meeting-planner" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        時差・世界時計
+      </a>
+      
     </div>
   </header>
 
@@ -580,7 +575,7 @@
 
           <!-- Search Input Neo Box -->
           <div id="search-section" class="relative scroll-mt-28 sm:scroll-mt-36 pt-2">
-              <div class="relative flex items-center">
+            <div class="relative flex items-center">
               <input type="text" id="tool-search" placeholder="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)" class="w-full px-4 py-3.5 bg-white border-[3px] border-black shadow-[5px_5px_0px_#000] text-sm font-mono font-bold text-black focus:outline-none focus:bg-[#fef08a] transition scroll-mt-28 sm:scroll-mt-36 placeholder-stone-500">
               <div class="absolute right-3 flex items-center space-x-1">
                 <kbd class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono font-black bg-white border-2 border-black">Ctrl+K</kbd>
@@ -588,7 +583,7 @@
               </div>
             </div>
             <div class="flex items-center justify-between text-xs font-mono font-black mt-3">
-              <span id="search-stats" class="bg-black text-white px-2 py-0.5">全 20 件の開発者向けツールを表示中</span>
+              <span id="search-stats" class="bg-black text-white px-2 py-0.5">全 25 件の開発者向けツールを表示中</span>
               <span class="text-stone-700">ESC: Clear</span>
             </div>
           </div>
@@ -639,7 +634,7 @@
           <span class="w-3.5 h-3.5 bg-black inline-block"></span>
           <span>ツール一覧カタログ</span>
         </h2>
-        <span class="text-xs font-mono font-black bg-[#fef08a] px-2 py-0.5 border-2 border-black shadow-[2px_2px_0px_#000]">20 ENGINES</span>
+        <span class="text-xs font-mono font-black bg-[#fef08a] px-2 py-0.5 border-2 border-black shadow-[2px_2px_0px_#000]">25 ENGINES</span>
       </div>
 
       <div id="no-tools-found" class="hidden text-center py-12 px-4 border-[3px] border-black bg-[#fef08a] shadow-[5px_5px_0px_#000] mb-12">
@@ -670,6 +665,11 @@
 <a href="/ja/payment-fee-calculator" data-search="決済手数料・実受取額計算機 - stripe・paypal・wiseの送金手数料と手残り試算 海外顧客からの入金時に引かれるstripeやpaypalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。 stripe 手数料 計算 paypal 手数料 シミュレーション 決済手数料 引いた手取り 計算 wise 送金手数料 payment-fee-calculator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#fed7aa] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">決済手数料・実受取額計算機 - Stripe・PayPal・Wiseの送金手数料と手残り試算</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">海外顧客からの入金時に引かれるStripeやPayPalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#Stripe 手数料 計算</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#PayPal 手数料 シミュレーション</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#決済手数料 引いた手取り 計算</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
 <a href="/ja/startup-runway-calculator" data-search="スタートアップ資金ランウェイ & バーンレート計算機 - 資金ショート時期の予測 保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。 資金繰り ランウェイ 計算 バーンレート 計算機 起業 運転資金 予測 スタートアップ 資金 ショート startup-runway-calculator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#fef08a] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">スタートアップ資金ランウェイ & バーンレート計算機 - 資金ショート時期の予測</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#資金繰り ランウェイ 計算</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#バーンレート 計算機</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#起業 運転資金 予測</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
 <a href="/ja/timezone-meeting-planner" data-search="海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。 時差計算 オンライン 会議 世界時計 リアルタイム 海外 ミーティング 時間 調整 リモートワーク 時差 調整 timezone-meeting-planner" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#86efac] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#時差計算 オンライン 会議</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#世界時計 リアルタイム</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#海外 ミーティング 時間 調整</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
+<a href="/ja/freelance-hourly-rate-calculator" data-search="フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定 希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。 フリーランス 時給 計算 個人事業主 単価 設定 適正時給 逆算 業務委託 見積もり 計算 freelance-hourly-rate-calculator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#f472b6] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#フリーランス 時給 計算</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#個人事業主 単価 設定</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#適正時給 逆算</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
+<a href="/ja/clean-invoice-generator" data-search="プロ仕様シンプル請求書作成ツール - 透かしなしpdf請求書を瞬時に出力・印刷 登録不要・完全無料。顧客名と業務明細を入力するだけで、洗練されたデザインのpdf請求書をその場で作成・印刷可能。 請求書 作成 無料 オンライン pdf 請求書 発行 フリーランス 請求書 テンプレート 登録不要 請求書 clean-invoice-generator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#67e8f9] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">プロ仕様シンプル請求書作成ツール - 透かしなしPDF請求書を瞬時に出力・印刷</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">登録不要・完全無料。顧客名と業務明細を入力するだけで、洗練されたデザインのPDF請求書をその場で作成・印刷可能。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#請求書 作成 無料 オンライン</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#PDF 請求書 発行</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#フリーランス 請求書 テンプレート</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
+<a href="/ja/payment-fee-calculator" data-search="決済手数料・実受取額計算機 - stripe・paypal・wiseの送金手数料と手残り試算 海外顧客からの入金時に引かれるstripeやpaypalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。 stripe 手数料 計算 paypal 手数料 シミュレーション 決済手数料 引いた手取り 計算 wise 送金手数料 payment-fee-calculator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#c084fc] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">決済手数料・実受取額計算機 - Stripe・PayPal・Wiseの送金手数料と手残り試算</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">海外顧客からの入金時に引かれるStripeやPayPalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#Stripe 手数料 計算</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#PayPal 手数料 シミュレーション</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#決済手数料 引いた手取り 計算</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
+<a href="/ja/startup-runway-calculator" data-search="スタートアップ資金ランウェイ & バーンレート計算機 - 資金ショート時期の予測 保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。 資金繰り ランウェイ 計算 バーンレート 計算機 起業 運転資金 予測 スタートアップ 資金 ショート startup-runway-calculator" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#fed7aa] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">スタートアップ資金ランウェイ & バーンレート計算機 - 資金ショート時期の予測</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#資金繰り ランウェイ 計算</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#バーンレート 計算機</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#起業 運転資金 予測</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
+<a href="/ja/timezone-meeting-planner" data-search="海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。 時差計算 オンライン 会議 世界時計 リアルタイム 海外 ミーティング 時間 調整 リモートワーク 時差 調整 timezone-meeting-planner" class="tool-card bg-white rounded-none p-5 sm:p-6 border-[3px] border-black shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono font-black uppercase px-2.5 py-1 border-2 border-black bg-[#fef08a] text-black shadow-[2px_2px_0px_#000]">TOOL</span><span class="text-[11px] font-mono font-bold bg-black text-white px-2 py-0.5 uppercase">100% Client</span></div><h3 class="text-base sm:text-lg font-black tracking-tight text-black group-hover:underline mb-2">海外リモートワーク時差計算 & オンライン会議スケジュール調整ツール</h3><p class="text-xs text-stone-700 font-medium line-clamp-2 mb-4 leading-relaxed">ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#時差計算 オンライン 会議</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#世界時計 リアルタイム</span><span class='inline-block bg-white text-black font-black text-[11px] px-2 py-0.5 border-2 border-black mr-1.5 mb-1.5 font-mono shadow-[2px_2px_0px_#000]'>#海外 ミーティング 時間 調整</span></div><div class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#fef08a] border-2 border-black text-black text-xs font-black shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:bg-[#86efac] transition-all"><span>ツールを開く</span><span class="text-sm font-bold">&rarr;</span></div></div></a>
       </div>
     </div>
 
@@ -791,19 +791,24 @@
     })();
     </script>
     
+
+    
+    <!-- GlobalCoreHub Native Ad Banner (Neo-Brutalism Style) -->
+    <aside class="my-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-bold" aria-label="Sponsored Content">
+      <div class="rounded-xl border-[3px] border-black bg-white dark:bg-zinc-900 p-4 sm:p-6 text-center overflow-hidden shadow-[4px_4px_0px_#000]">
+        <div class="text-[10px] uppercase font-mono tracking-widest text-black dark:text-yellow-300 mb-3 flex items-center justify-center space-x-2">
+          <span>⚡</span>
+          <span>SPONSORED PARTNER CONTENT</span>
+          <span>⚡</span>
+        </div>
+        <div id="container-411eda7150daa05047a0b4f542aa62eb" class="min-h-[100px] flex items-center justify-center"></div>
+        <script async="async" data-cfasync="false" src="https://dischargeconceiteffort.com/411eda7150daa05047a0b4f542aa62eb/invoke.js"></script>
+      </div>
+    </aside>
+    
   </main>
 
   <!-- Neo-Brutalist High-Impact Footer -->
-  
-  <!-- Verified Global Native Ad Banner (*.globalcorehub.com) -->
-  <section class="max-w-5xl mx-auto px-4 my-8 w-full" data-ad-wrapper="native-banner">
-    <div class="rounded-xl border border-slate-700/60 bg-slate-900/40 p-4 text-center backdrop-blur-sm shadow-lg">
-      <span class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-2 block">Sponsored / Advertisement</span>
-      <div id="container-411eda7150daa05047a0b4f542aa62eb" class="min-h-[100px] flex items-center justify-center"></div>
-      <script async="async" data-cfasync="false" src="https://dischargeconceiteffort.com/411eda7150daa05047a0b4f542aa62eb/invoke.js"></script>
-    </div>
-  </section>
-
   <footer class="mt-auto border-t-[3px] border-black bg-white dark:bg-zinc-900 pt-12 pb-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -855,19 +860,16 @@
       </div>
 
       <div class="pt-6 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold">
-        <div>&copy; GigCalc Studio. 100% Client-Side Execution.</div>
-        <div class="mt-2 sm:mt-0">7大グローバル言語 · 140 本地化エンドポイント · 100% クライアント完結</div>
+        <div>
+          &copy; GigCalc Studio. 100% Client-Side Execution.
+          
+          <span class="mx-2 opacity-40">|</span>
+          <a href="https://dischargeconceiteffort.com/bs4tah5fhz?key=f031a850339a5c91e7f30d97af3de3b2" target="_blank" rel="sponsored noopener noreferrer" class="text-black dark:text-yellow-300 hover:underline bg-yellow-300 dark:bg-black px-2 py-0.5 rounded border border-black shadow-[1px_1px_0px_#000]">⚡ Partner Resources ↗</a>
+          
+        </div>
+        <div class="mt-2 sm:mt-0">7大グローバル言語 · 175 本地化エンドポイント · 100% クライアント完結</div>
       </div>
     </div>
-  
-      <!-- Smartlink Partner Recommendation -->
-      <div class="my-4 pt-4 border-t border-slate-700/30 flex items-center justify-center" data-ad-wrapper="smartlink">
-        <a href="https://dischargeconceiteffort.com/bs4tah5fhz?key=f031a850339a5c91e7f30d97af3de3b2" target="_blank" rel="sponsored noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/30 transition shadow-sm">
-          <span>⚡ Featured Partner Resources &amp; Global Tools</span>
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-        </a>
-      </div>
-
   </footer>
 
   <!-- Floating Back to Top Button -->
@@ -922,11 +924,20 @@
       }, 2000);
     };
 
-    // 5. Smooth Centered Search Focus Runtime
+    // 5. Smooth Centered Search Focus Runtime with Header Offset
     window.focusAndCenterSearch = function() {
       const searchInput = document.getElementById('tool-search');
       if (searchInput) {
-        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const header = document.querySelector('header') || document.querySelector('nav');
+        const headerOffset = (header ? header.offsetHeight : 70) + 24;
+        const elementPosition = searchInput.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
         setTimeout(() => {
           try {
             searchInput.focus({ preventScroll: true });
@@ -975,31 +986,5 @@
     });
   })();
   </script>
-
-  <!-- Fluid Motion Helpers (Counter Ticker & Tactile Feedback) -->
-  <script>
-  window.animateCounter = function(element, targetValue, duration, prefix, suffix, decimals) {
-    if (!element) return;
-    duration = duration || 800;
-    prefix = prefix || '';
-    suffix = suffix || '';
-    decimals = decimals !== undefined ? decimals : 0;
-    const start = 0;
-    const end = parseFloat(targetValue) || 0;
-    const startTime = performance.now();
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = start + (end - start) * ease;
-      element.textContent = prefix + current.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
-    }
-    requestAnimationFrame(update);
-  };
-  </script>
-
 </body>
 </html>

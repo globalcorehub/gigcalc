@@ -199,56 +199,6 @@
   }
   </script>
   
-
-  <!-- Fluid Motion & Micro-Interactions Suite -->
-  <style>
-    @keyframes subtle-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    @keyframes ambient-glow {
-      0%, 100% { opacity: 0.35; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.06); }
-    }
-    @keyframes shimmer-sweep {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(200%); }
-    }
-    @keyframes spring-pop {
-      0% { transform: scale(0.6); opacity: 0; }
-      60% { transform: scale(1.2); }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-    }
-    .motion-float {
-      animation: subtle-float 6s ease-in-out infinite;
-    }
-    .motion-glow {
-      animation: ambient-glow 7s ease-in-out infinite;
-    }
-    .motion-card {
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
-      will-change: transform;
-    }
-    .motion-card:hover {
-      transform: translateY(-4px);
-    }
-    .motion-btn {
-      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
-      will-change: transform;
-    }
-    .motion-btn:active {
-      transform: scale(0.96);
-    }
-    .spring-pop {
-      animation: spring-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-  </style>
-
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-yellow-300 selection:text-black">
 
@@ -308,7 +258,7 @@
             <div id="tools-dropdown-panel" class="hidden absolute right-0 mt-2 w-80 rounded-xl bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] p-2.5 z-50">
               <div class="text-[10px] font-mono text-neutral-500 px-3 py-1.5 uppercase font-bold border-b-2 border-black mb-1.5 flex justify-between">
                 <span>全ツール一覧</span>
-                <span>20 UNITS</span>
+                <span>25 UNITS</span>
               </div>
               <div class="max-h-80 overflow-y-auto space-y-1">
                 
@@ -385,6 +335,31 @@
                 <a href="/ja/freelance-client-contract-pricing-calculator-instant-3" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
                   <div class="font-black text-xs">Freelance Client</div>
                   <div class="text-[11px] text-neutral-600 truncate font-sans">Use the best online Freelance Client Contract & Pricing Calculator instant 3 tool. Fast, accurate, and completely free in your browser.</div>
+                </a>
+                
+                <a href="/ja/freelance-hourly-rate-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">時給逆算</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。</div>
+                </a>
+                
+                <a href="/ja/clean-invoice-generator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">請求書作成</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">登録不要・完全無料。顧客名と業務明細を入力するだけで、洗練されたデザインのPDF請求書をその場で作成・印刷可能。</div>
+                </a>
+                
+                <a href="/ja/payment-fee-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">決済手数料</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">海外顧客からの入金時に引かれるStripeやPayPalの決済手数料・為替手数料を自動計算し、最終的な実入金額を明示。</div>
+                </a>
+                
+                <a href="/ja/startup-runway-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">資金ランウェイ</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">保有資金残高、月次支出(バーンレート)、月次売上から、資金が尽きるまでの残り月数(ランウェイ)を正確に算出。</div>
+                </a>
+                
+                <a href="/ja/timezone-meeting-planner" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
+                  <div class="font-black text-xs">時差・世界時計</div>
+                  <div class="text-[11px] text-neutral-600 truncate font-sans">ニューヨーク、ロンドン、東京、シンガポールなどの主要都市の現在時刻を同時表示し、時差による負担の少ない会議時間を提案。</div>
                 </a>
                 
                 <a href="/ja/freelance-hourly-rate-calculator" class="block px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-100 transition text-black">
@@ -571,6 +546,26 @@
         時差・世界時計
       </a>
       
+      <a href="/ja/freelance-hourly-rate-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        時給逆算
+      </a>
+      
+      <a href="/ja/clean-invoice-generator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        請求書作成
+      </a>
+      
+      <a href="/ja/payment-fee-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        決済手数料
+      </a>
+      
+      <a href="/ja/startup-runway-calculator" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        資金ランウェイ
+      </a>
+      
+      <a href="/ja/timezone-meeting-planner" class="block px-3.5 py-2 rounded-xl border-2 border-black bg-white hover:bg-yellow-200 text-xs font-bold text-black shadow-[2px_2px_0px_#000]">
+        時差・世界時計
+      </a>
+      
     </div>
   </header>
 
@@ -592,47 +587,279 @@
     
 
     
-<section class="max-w-5xl mx-auto p-4 sm:p-8 bg-white dark:bg-zinc-900 rounded-xl border-2 border-black"><h1 class="text-2xl font-bold">フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定</h1><p class="my-4">希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><label class="block">年間手取り目標<input id="rate-income" type="number" step="any" value="50000" class="block w-full border rounded p-2 bg-white dark:bg-zinc-800"></label><label class="block">年間事業経費<input id="rate-costs" type="number" step="any" value="10000" class="block w-full border rounded p-2 bg-white dark:bg-zinc-800"></label><label class="block">推定税率 (%)<input id="rate-tax" type="number" step="any" value="20" class="block w-full border rounded p-2 bg-white dark:bg-zinc-800"></label><label class="block">年間稼働週数<input id="rate-weeks" type="number" step="any" value="46" class="block w-full border rounded p-2 bg-white dark:bg-zinc-800"></label><label class="block">週の請求可能時間<input id="rate-hours" type="number" step="any" value="25" class="block w-full border rounded p-2 bg-white dark:bg-zinc-800"></label></div><div class="grid sm:grid-cols-3 gap-4 my-6" aria-live="polite"><div>時間単価<output id="rate-hourly" class="block text-2xl font-bold">-</output></div><div>8時間の日額<output id="rate-daily" class="block text-2xl font-bold">-</output></div><div>必要な年間売上<output id="rate-revenue" class="block text-2xl font-bold">-</output></div></div><p class="text-sm">金額は同じ通貨で入力してください。税額は事業経費を差し引いた利益から推定します。</p><p class="font-mono text-sm my-2">(年間手取り目標 ÷ (1 − 推定税率 (%) ÷ 100) + 年間事業経費) ÷ (年間稼働週数 × 週の請求可能時間)</p></section><script>
-(() => {
-  const ids = ['rate-income', 'rate-costs', 'rate-tax', 'rate-weeks', 'rate-hours'];
-  const inputs = ids.map(id => document.getElementById(id));
-  const outputs = ['rate-hourly', 'rate-daily', 'rate-revenue'].map(id => document.getElementById(id));
-  function calculate() {
-    const values = inputs.map(input => input.value.trim() === '' ? NaN : Number(input.value));
-    const [income, costs, tax, weeks, hours] = values;
-    const valid = [Number.isFinite(income) && income >= 0, Number.isFinite(costs) && costs >= 0,
-      Number.isFinite(tax) && tax >= 0 && tax < 100, Number.isFinite(weeks) && weeks > 0 && weeks <= 52,
-      Number.isFinite(hours) && hours > 0 && hours <= 168];
-    inputs.forEach((input, index) => input.setAttribute('aria-invalid', String(!valid[index])));
-    const revenue = income / (1 - tax / 100) + costs;
-    const hourly = revenue / (weeks * hours);
-    if (!valid.every(Boolean) || !Number.isFinite(revenue) || !Number.isFinite(hourly)) {
-      outputs.forEach(output => { output.textContent = '-'; }); return;
-    }
-    [hourly, hourly * 8, revenue].forEach((value, i) => { outputs[i].textContent = value.toFixed(2); });
+<div class="max-w-5xl mx-auto">
+  <div class="bg-white dark:bg-[#27272a] rounded-2xl shadow-[5px_5px_0px_#000] border border-3 border-black hover:border-black p-4 sm:p-6 md:p-8">
+    <div class="border-b border-b-4 border-black pb-4 sm:pb-6">
+      <div class="flex items-center justify-between mb-2 sm:mb-3">
+        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-black text-[#fde047] font-black uppercase text-xs px-2.5 py-0.5 border border-black font-mono">
+          <span>RFC 3986 URL 変換 & クエリ解析器</span>
+        </div>
+        <span class="text-[10px] sm:text-[11px] font-mono opacity-50">100% クライアント処理 • パラメータ分解 & エンコード</span>
+      </div>
+      <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定</h1>
+      <p class="text-xs sm:text-sm opacity-70 mt-1.5 leading-relaxed">希望する手取り年収、実働請求可能時間、税金・保険料、固定経費から、利益を確保できる最低請求時給と日当を算出。</p>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-2.5 p-3 rounded-xl border border-3 border-black hover:border-black bg-black/5 dark:bg-white/5">
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="btn-encode-comp" class="px-3 py-1.5 text-xs rounded-lg font-mono font-bold bg-[#fde047] hover:bg-[#facc15] text-black font-extrabold border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all transition">コンポーネントエンコード</button>
+        <button id="btn-encode-full" class="px-3 py-1.5 text-xs rounded-lg font-mono border border-3 border-black hover:border-black hover:bg-white/10 transition">全体エンコード (URL)</button>
+        <button id="btn-decode" class="px-3 py-1.5 text-xs rounded-lg font-mono border border-3 border-black hover:border-black hover:bg-white/10 transition">URL デコード復号</button>
+        <button id="btn-sample" class="px-3 py-1.5 text-xs rounded-lg font-mono border border-3 border-black hover:border-black hover:bg-white/10 transition opacity-80">サンプルURL読込</button>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button id="btn-copy" class="px-3 py-1.5 text-xs rounded-lg font-mono font-bold border border-3 border-black hover:border-black hover:bg-white/10 transition flex items-center space-x-1">
+          <span id="copy-text">結果をコピー</span>
+        </button>
+        <button id="btn-clear" class="px-2.5 py-1.5 text-xs rounded-lg font-mono opacity-70 hover:opacity-100 hover:bg-red-500/20 text-red-400 transition">すべてクリア</button>
+      </div>
+    </div>
+
+    <!-- Dual Workspace Input / Output -->
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col">
+        <div class="flex items-center justify-between text-xs font-mono opacity-70 mb-1.5 px-1">
+          <span>入力データ</span>
+          <span id="input-stats">0 文字</span>
+        </div>
+        <div id="drop-zone" class="relative flex-grow">
+          <textarea id="url-input" placeholder="変換または解析したいURLを入力（ファイルのドラッグ＆ドロップ対応）..." class="w-full h-48 sm:h-64 p-3.5 rounded-xl border border-3 border-black hover:border-black bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500 resize-y leading-relaxed"></textarea>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="flex items-center justify-between text-xs font-mono opacity-70 mb-1.5 px-1">
+          <span>処理結果</span>
+          <span id="output-stats">0 文字</span>
+        </div>
+        <textarea id="url-output" readonly placeholder="変換結果がここにリアルタイム表示されます..." class="w-full h-48 sm:h-64 p-3.5 rounded-xl border border-3 border-black hover:border-black bg-black/30 text-xs font-mono opacity-90 focus:outline-none resize-y leading-relaxed"></textarea>
+      </div>
+    </div>
+
+    <!-- Parsed Query Parameters Table -->
+    <div class="mt-6 p-4 rounded-xl border border-3 border-black hover:border-black bg-black/10 dark:bg-white/5">
+      <div class="flex items-center justify-between mb-3 border-b border-3 border-black hover:border-black pb-2">
+        <h3 class="text-xs font-bold uppercase tracking-wider font-mono opacity-80">分解されたGETクエリパラメータ一覧</h3>
+        <span id="params-count" class="text-[10px] font-mono opacity-60">0 parameters</span>
+      </div>
+      <div id="params-table-container" class="overflow-x-auto">
+        <p class="text-xs font-mono opacity-50 py-3">URL内にクエリパラメータは見つかりませんでした。</p>
+      </div>
+    </div>
+
+    <!-- SEO & Content is King Section -->
+    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-b-4 border-black grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div>
+        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">フリーランス適正時給・日給逆算計算機 - 目標年収から逆算する科学的価格設定</h2>
+        <p class="text-xs opacity-75 leading-relaxed mb-4">
+          Welcome to the high-efficiency browser utility for <strong>フリーランス 時給 計算</strong>. All encoding, percent-escaping, and parameter parsing computations execute in your local browser sandbox with zero telemetry.
+        </p>
+        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">使い方と操作ステップ</h3>
+        <ol class="text-xs opacity-75 space-y-1.5 font-mono list-decimal list-inside mb-4">
+          <li>Paste or drag-and-drop any URL or query string into the input workspace.</li>
+          <li>Choose <strong>コンポーネントエンコード</strong> for parameters or <strong>URL デコード復号</strong> for raw links.</li>
+          <li>Inspect parsed GET query parameters in the visual table below and click copy.</li>
+        </ol>
+        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">Related Search Queries</h3>
+        <ul class="space-y-0.5"><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#eab308'>+</span>フリーランス 時給 計算</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#eab308'>+</span>個人事業主 単価 設定</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#eab308'>+</span>適正時給 逆算</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#eab308'>+</span>業務委託 見積もり 計算</li></ul>
+      </div>
+      <div>
+        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">よくある質問と技術仕様ガイド</h2>
+        <div class="space-y-2.5">
+          <div class="p-3.5 rounded-xl border border-3 border-black hover:border-black bg-black/5 dark:bg-white/5">
+            <h4 class="text-xs font-bold mb-1">What is the difference between encodeURI and encodeURIComponent?</h4>
+            <p class="text-[11px] opacity-70 leading-relaxed">
+              <code>encodeURI</code> preserves protocol and path delimiters like <code>/</code>, <code>:</code>, <code>?</code>, and <code>#</code>, while <code>encodeURIComponent</code> encodes all special punctuation so the string can be safely inserted as a query parameter value.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-3 border-black hover:border-black bg-black/5 dark:bg-white/5">
+            <h4 class="text-xs font-bold mb-1">100% 完全ローカル・プライバシー保護</h4>
+            <p class="text-[11px] opacity-70 leading-relaxed">テキスト比較やURL変換はすべてブラウザ内部で完結し、外部へのデータ送信は一切行いません。</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-3 border-black hover:border-black bg-black/5 dark:bg-white/5">
+            <h4 class="text-xs font-bold mb-1">ネイティブWeb APIによる超高速処理</h4>
+            <p class="text-[11px] opacity-70 leading-relaxed">ブラウザのネイティブJavaScriptエンジンを活用し、ゼロ遅延でスムーズに動作します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const inputEl = document.getElementById('url-input');
+  const outputEl = document.getElementById('url-output');
+  const btnComp = document.getElementById('btn-encode-comp');
+  const btnFull = document.getElementById('btn-encode-full');
+  const btnDecode = document.getElementById('btn-decode');
+  const btnSample = document.getElementById('btn-sample');
+  const btnCopy = document.getElementById('btn-copy');
+  const copyText = document.getElementById('copy-text');
+  const btnClear = document.getElementById('btn-clear');
+  const inStats = document.getElementById('input-stats');
+  const outStats = document.getElementById('output-stats');
+  const paramsTable = document.getElementById('params-table-container');
+  const paramsCount = document.getElementById('params-count');
+  const dropZone = document.getElementById('drop-zone');
+
+  function updateStats() {
+    const inLen = inputEl.value.length;
+    const outLen = outputEl.value.length;
+    inStats.innerText = inLen + " 文字";
+    outStats.innerText = outLen + " 文字";
+    parseQueryParams(inputEl.value);
   }
-  inputs.forEach(input => input.addEventListener('input', calculate));
-  calculate();
+
+  function parseQueryParams(str) {
+    try {
+      let searchPart = "";
+      if (str.includes('?')) {
+        searchPart = str.split('?')[1].split('#')[0];
+      } else if (str.includes('=')) {
+        searchPart = str;
+      }
+      if (!searchPart) {
+        paramsTable.innerHTML = '<p class="text-xs font-mono opacity-50 py-3">URL内にクエリパラメータは見つかりませんでした。</p>';
+        paramsCount.innerText = "0 parameters";
+        return;
+      }
+      const params = new URLSearchParams(searchPart);
+      let count = 0;
+      let rows = "";
+      for (const [k, v] of params.entries()) {
+        count++;
+        rows += '<tr class="border-b border-3 border-black hover:border-black/40 hover:bg-white/5">' +
+          '<td class="py-1.5 px-2 font-bold opacity-90 text-brand break-all">' + escapeHtml(k) + '</td>' +
+          '<td class="py-1.5 px-2 opacity-80 break-all">' + escapeHtml(v) + '</td>' +
+          '</tr>';
+      }
+      if (count > 0) {
+        paramsCount.innerText = count + " parameters";
+        paramsTable.innerHTML = '<table class="w-full text-left font-mono text-xs">' +
+          '<thead><tr class="border-b border-3 border-black hover:border-black opacity-50 text-[10px] uppercase">' +
+          '<th class="py-1 px-2">パラメータ名 (Key)</th><th class="py-1 px-2">値 (Value)</th></tr></thead>' +
+          '<tbody>' + rows + '</tbody></table>';
+      } else {
+        paramsTable.innerHTML = '<p class="text-xs font-mono opacity-50 py-3">URL内にクエリパラメータは見つかりませんでした。</p>';
+        paramsCount.innerText = "0 parameters";
+      }
+    } catch(e) {
+      paramsTable.innerHTML = '<p class="text-xs font-mono opacity-50 py-3">URL内にクエリパラメータは見つかりませんでした。</p>';
+      paramsCount.innerText = "0 parameters";
+    }
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  if (btnComp) {
+    btnComp.addEventListener('click', () => {
+      outputEl.value = encodeURIComponent(inputEl.value);
+      updateStats();
+    });
+  }
+
+  if (btnFull) {
+    btnFull.addEventListener('click', () => {
+      outputEl.value = encodeURI(inputEl.value);
+      updateStats();
+    });
+  }
+
+  if (btnDecode) {
+    btnDecode.addEventListener('click', () => {
+      try {
+        outputEl.value = decodeURIComponent(inputEl.value.replace(/\+/g, ' '));
+      } catch(e) {
+        try { outputEl.value = decodeURI(inputEl.value); } catch(err) { outputEl.value = "Error decoding URL: " + e.message; }
+      }
+      updateStats();
+    });
+  }
+
+  if (btnSample) {
+    btnSample.addEventListener('click', () => {
+      inputEl.value = "https://example.com/search?q=developer+tools&category=web&ref=github&timestamp=" + Date.now();
+      outputEl.value = encodeURIComponent(inputEl.value);
+      updateStats();
+    });
+  }
+
+  if (btnClear) {
+    btnClear.addEventListener('click', () => {
+      inputEl.value = '';
+      outputEl.value = '';
+      updateStats();
+    });
+  }
+
+  if (btnCopy) {
+    btnCopy.addEventListener('click', () => {
+      const text = outputEl.value || inputEl.value;
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        copyText.innerText = "✓ Copied!";
+        btnCopy.classList.add('bg-emerald-500/20', 'text-emerald-400');
+        setTimeout(() => {
+          copyText.innerText = "結果をコピー";
+          btnCopy.classList.remove('bg-emerald-500/20', 'text-emerald-400');
+        }, 1500);
+      });
+    });
+  }
+
+  // Drag and drop support (FileReader)
+  if (dropZone) {
+    ['dragenter', 'dragover'].forEach(name => {
+      dropZone.addEventListener(name, (e) => {
+        e.preventDefault();
+        inputEl.classList.add('border-emerald-500', 'bg-emerald-500/10');
+      });
+    });
+    ['dragleave', 'drop'].forEach(name => {
+      dropZone.addEventListener(name, (e) => {
+        e.preventDefault();
+        inputEl.classList.remove('border-emerald-500', 'bg-emerald-500/10');
+      });
+    });
+    dropZone.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          inputEl.value = event.target.result;
+          updateStats();
+        };
+        reader.readAsText(files[0]);
+      }
+    });
+  }
+
+  inputEl.addEventListener('input', updateStats);
 })();
 </script>
         
+
+    
+    <!-- GlobalCoreHub Native Ad Banner (Neo-Brutalism Style) -->
+    <aside class="my-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-bold" aria-label="Sponsored Content">
+      <div class="rounded-xl border-[3px] border-black bg-white dark:bg-zinc-900 p-4 sm:p-6 text-center overflow-hidden shadow-[4px_4px_0px_#000]">
+        <div class="text-[10px] uppercase font-mono tracking-widest text-black dark:text-yellow-300 mb-3 flex items-center justify-center space-x-2">
+          <span>⚡</span>
+          <span>SPONSORED PARTNER CONTENT</span>
+          <span>⚡</span>
+        </div>
+        <div id="container-411eda7150daa05047a0b4f542aa62eb" class="min-h-[100px] flex items-center justify-center"></div>
+        <script async="async" data-cfasync="false" src="https://dischargeconceiteffort.com/411eda7150daa05047a0b4f542aa62eb/invoke.js"></script>
+      </div>
+    </aside>
+    
   </main>
 
   <!-- Neo-Brutalist High-Impact Footer -->
-  
-  <!-- Verified Global Native Ad Banner (*.globalcorehub.com) -->
-      <a href="https://dischargeconceiteffort.com/bs4tah5fhz?key=f031a850339a5c91e7f30d97af3de3b2" target="_blank" rel="sponsored noopener noreferrer" class="text-amber-500 hover:text-amber-400 font-bold underline flex items-center gap-1 flex-shrink-0">
-        <span>Partner Solutions ↗</span>
-      </a>
-    </div>
-<section class="max-w-5xl mx-auto px-4 my-8 w-full" data-ad-wrapper="native-banner">
-    <div class="rounded-xl border border-slate-700/60 bg-slate-900/40 p-4 text-center backdrop-blur-sm shadow-lg">
-      <span class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-2 block">Sponsored / Advertisement</span>
-      <div id="container-411eda7150daa05047a0b4f542aa62eb" class="min-h-[100px] flex items-center justify-center"></div>
-      <script async="async" data-cfasync="false" src="https://dischargeconceiteffort.com/411eda7150daa05047a0b4f542aa62eb/invoke.js"></script>
-    </div>
-  </section>
-
   <footer class="mt-auto border-t-[3px] border-black bg-white dark:bg-zinc-900 pt-12 pb-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -684,19 +911,16 @@
       </div>
 
       <div class="pt-6 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold">
-        <div>&copy; GigCalc Studio. 100% Client-Side Execution.</div>
-        <div class="mt-2 sm:mt-0">7大グローバル言語 · 140 本地化エンドポイント · 100% クライアント完結</div>
+        <div>
+          &copy; GigCalc Studio. 100% Client-Side Execution.
+          
+          <span class="mx-2 opacity-40">|</span>
+          <a href="https://dischargeconceiteffort.com/bs4tah5fhz?key=f031a850339a5c91e7f30d97af3de3b2" target="_blank" rel="sponsored noopener noreferrer" class="text-black dark:text-yellow-300 hover:underline bg-yellow-300 dark:bg-black px-2 py-0.5 rounded border border-black shadow-[1px_1px_0px_#000]">⚡ Partner Resources ↗</a>
+          
+        </div>
+        <div class="mt-2 sm:mt-0">7大グローバル言語 · 175 本地化エンドポイント · 100% クライアント完結</div>
       </div>
     </div>
-  
-      <!-- Smartlink Partner Recommendation -->
-      <div class="my-4 pt-4 border-t border-slate-700/30 flex items-center justify-center" data-ad-wrapper="smartlink">
-        <a href="https://dischargeconceiteffort.com/bs4tah5fhz?key=f031a850339a5c91e7f30d97af3de3b2" target="_blank" rel="sponsored noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/30 transition shadow-sm">
-          <span>⚡ Featured Partner Resources &amp; Global Tools</span>
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-        </a>
-      </div>
-
   </footer>
 
   <!-- Floating Back to Top Button -->
@@ -751,11 +975,20 @@
       }, 2000);
     };
 
-    // 5. Smooth Centered Search Focus Runtime
+    // 5. Smooth Centered Search Focus Runtime with Header Offset
     window.focusAndCenterSearch = function() {
       const searchInput = document.getElementById('tool-search');
       if (searchInput) {
-        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const header = document.querySelector('header') || document.querySelector('nav');
+        const headerOffset = (header ? header.offsetHeight : 70) + 24;
+        const elementPosition = searchInput.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
         setTimeout(() => {
           try {
             searchInput.focus({ preventScroll: true });
@@ -804,31 +1037,5 @@
     });
   })();
   </script>
-
-  <!-- Fluid Motion Helpers (Counter Ticker & Tactile Feedback) -->
-  <script>
-  window.animateCounter = function(element, targetValue, duration, prefix, suffix, decimals) {
-    if (!element) return;
-    duration = duration || 800;
-    prefix = prefix || '';
-    suffix = suffix || '';
-    decimals = decimals !== undefined ? decimals : 0;
-    const start = 0;
-    const end = parseFloat(targetValue) || 0;
-    const startTime = performance.now();
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = start + (end - start) * ease;
-      element.textContent = prefix + current.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
-    }
-    requestAnimationFrame(update);
-  };
-  </script>
-
 </body>
 </html>
