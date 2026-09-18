@@ -630,149 +630,84 @@
     
 
     
-<div class="max-w-5xl mx-auto">
+<div class="max-w-4xl mx-auto">
   <div class="bg-[#11141d] rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-[#1e2333] hover:border-[#10b981]/50 p-4 sm:p-6 md:p-8">
-    <!-- Header -->
     <div class="border-b border-[#1e2333] pb-4 sm:pb-6">
       <div class="flex items-center justify-between mb-2 sm:mb-3">
         <div class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 font-mono font-bold">
-          <span>💼 フリーランス契約金額 & プロジェクト見積計算機</span>
+          <span>⚡ フリーランス時間単価 & プロジェクト報酬計算ツール</span>
         </div>
-        <span class="text-[10px] sm:text-[11px] font-mono opacity-60">100% ブラウザ完結 • 固定請負価格・着手金・月額保守算出</span>
+        <span class="text-[10px] sm:text-[11px] font-mono opacity-60">100% ブラウザ内計算 • 厳格な数値検証と 100% 税率エラー防止</span>
       </div>
       <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">フリーランス契約金額 & 見積もり計算機 - 固定案件価格・着手金・月額顧問料算出</h1>
       <p class="text-xs sm:text-sm opacity-70 mt-1.5 leading-relaxed">見積工数、特急対応加算、修正回数予備、リスクバッファを組み込み、適正な固定請負契約価格、着手金、月額リテイナー費用を自動計算。</p>
     </div>
 
-    <!-- Inputs & Outputs Grid -->
-    <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <!-- Input Controls (6 cols) -->
-      <div class="lg:col-span-6 space-y-3.5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono font-bold opacity-80 mb-1">基準時給 ($/時間)</label>
-            <input id="inp-rate" type="number" value="75" min="10" step="5" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono font-bold opacity-80 mb-1">見積もり作業工数 (時間)</label>
-            <input id="inp-hours" type="number" value="40" min="1" step="1" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">想定納期 (週間)</label>
-            <input id="inp-weeks" type="number" value="3" min="1" max="52" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">含まれる修正回数</label>
-            <input id="inp-revisions" type="number" value="2" min="0" max="10" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">要件変更・リスクバッファ (%)</label>
-            <input id="inp-buffer" type="number" value="20" min="0" max="100" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">特急対応 / 難易度加算 (%)</label>
-            <input id="inp-rush" type="number" value="15" min="0" max="100" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
+    <!-- Inputs Grid -->
+    <section class="audit-tool mt-6 space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div>
-          <label class="block text-xs font-mono opacity-75 mb-1">外注・専用ツール実費 ($)</label>
-          <input id="inp-expenses" type="number" value="150" min="0" step="25" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
+          <label for="rate-income" class="block text-xs font-mono font-bold opacity-75 mb-1.5">希望する年間手取り収入 ($)</label>
+          <input id="rate-income" type="number" min="0" max="1000000000000" value="90000" step="5000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-hours" class="block text-xs font-mono font-bold opacity-75 mb-1.5">週あたりの稼働可能時間 (時間)</label>
+          <input id="rate-hours" type="number" min="1" max="80" value="25" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-vacation" class="block text-xs font-mono font-bold opacity-75 mb-1.5">年間の休暇週数 (週)</label>
+          <input id="rate-vacation" type="number" min="0" max="51" value="4" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-tax" class="block text-xs font-mono font-bold opacity-75 mb-1.5">想定税率および社会保障費 (%)</label>
+          <input id="rate-tax" type="number" min="0" max="99.99" value="25" step="0.5" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="rate-overhead" class="block text-xs font-mono font-bold opacity-75 mb-1.5">月額固定経費 ($)</label>
+          <input id="rate-overhead" type="number" min="0" max="1000000000000" value="500" step="100" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
         </div>
       </div>
 
-      <!-- Output Pricing Cards (6 cols) -->
-      <div class="lg:col-span-6 space-y-3 flex flex-col justify-between">
-        <!-- Hero Fixed Quote Card -->
-        <div class="p-4 rounded-xl border-2 border-emerald-500/50 bg-emerald-500/10 shadow-lg">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono uppercase tracking-wider font-bold text-emerald-400">固定請負 契約総額</span>
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Recommended</span>
-          </div>
-          <div id="out-total" class="text-3xl sm:text-4xl font-black font-mono text-white mt-1">$4,350.00</div>
-          <div class="text-[11px] opacity-75 font-mono mt-1 flex items-center justify-between">
-            <span>実質有効時給: <strong id="out-effective" class="text-emerald-400">$108.75/hr</strong></span>
-            <span>Est. Margin: <strong class="text-emerald-400">+35%</strong></span>
-          </div>
+      <!-- Results Grid -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">推奨最低時間単価</span>
+          <div id="res-hourly" class="text-2xl font-black font-mono text-emerald-400 mt-1 min-h-[2rem]"></div>
         </div>
-
-        <!-- Milestones Breakdown -->
-        <div class="grid grid-cols-3 gap-2 text-center font-mono">
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">契約時 着手金 (50%)</span>
-            <span id="out-dep" class="text-sm sm:text-base font-bold text-emerald-300 block mt-0.5">$2,175</span>
-          </div>
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">中間納品時 (25%)</span>
-            <span id="out-beta" class="text-sm sm:text-base font-bold opacity-90 block mt-0.5">$1,087.50</span>
-          </div>
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">最終検収時 残金 (25%)</span>
-            <span id="out-final" class="text-sm sm:text-base font-bold opacity-90 block mt-0.5">$1,087.50</span>
-          </div>
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">日額基準報酬 (8時間換算)</span>
+          <div id="res-day" class="text-2xl font-black font-mono text-cyan-400 mt-1 min-h-[2rem]"></div>
         </div>
-
-        <!-- Retainer Option -->
-        <div class="p-3 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 flex items-center justify-between">
-          <div>
-            <span class="text-[11px] font-mono opacity-60 block">月額顧問・保守契約の目安</span>
-            <span class="text-xs font-mono font-bold opacity-80">(~10 hours/mo maintenance)</span>
-          </div>
-          <span id="out-retainer" class="text-lg font-black font-mono text-emerald-400">$950.00/mo</span>
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">月間目標総売上</span>
+          <div id="res-gross" class="text-2xl font-black font-mono text-purple-400 mt-1 min-h-[2rem]"></div>
         </div>
       </div>
-    </div>
 
-    <!-- Generated Clause Box -->
-    <div class="mt-6 border-t border-[#1e2333] hover:border-[#10b981]/50 pt-5">
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs font-mono font-bold opacity-80">契約書にそのまま使える支払条件条項</span>
-        <button id="btn-copy-clause" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500 text-black text-xs font-mono font-bold hover:bg-emerald-400 transition active:scale-95">
-          <span id="copy-clause-text">支払条項をコピー</span>
+      <div class="pt-2 flex items-center justify-between">
+        <button id="btn-copy-rate" class="px-4 py-2 text-xs rounded-xl font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-black transition active:scale-95 shadow-sm flex items-center gap-2">
+          <span id="copy-rate-text">見積もりをコピー</span>
         </button>
       </div>
-      <textarea id="clause-output" readonly rows="5" class="w-full p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/30 text-xs font-mono opacity-90 focus:outline-none resize-y leading-relaxed"></textarea>
-    </div>
+      <p id="rate-validation" role="status" aria-live="polite" class="text-xs font-mono text-red-400 min-h-[1.5rem] mt-2"></p>
+    </section>
 
-    <!-- Documentation & FAQ -->
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#1e2333] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <!-- Technical Guide & FAQ -->
+    <div class="mt-10 pt-8 border-t border-[#1e2333] space-y-6">
       <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">フリーランス契約金額 & 見積もり計算機 - 固定案件価格・着手金・月額顧問料算出</h2>
-        <p class="text-xs opacity-75 leading-relaxed mb-4">
-          Professional financial planning utility for <strong>フリーランス 見積もり 計算機</strong>. Transition from unpredictable hourly billing to profitable milestone contracts with built-in buffers for revisions and rush requirements.
-        </p>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">固定価格案件の見積もり算出手順</h3>
-        <ol class="text-xs opacity-75 space-y-1.5 font-mono list-decimal list-inside mb-4">
-          <li>Enter your baseline target hourly rate and realistic scope duration.</li>
-          <li>Apply a 15-25% contingency buffer to insulate against unbilled scope creep.</li>
-          <li>Require a 50% upfront commitment deposit prior to commencing work.</li>
-          <li>Copy the standardized milestone schedule clause directly into your statement of work.</li>
-        </ol>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">Related Search Queries</h3>
-        <ul class="space-y-0.5"><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>フリーランス 見積もり 計算機</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>固定価格 案件 金額 算出</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>着手金 割合 計算</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>月額 顧問料 リテイナー 計算</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>業務委託 契約 見積もり 金額</li></ul>
+        <h2 class="text-sm sm:text-base font-bold mb-2">フリーランス報酬設定の考え方</h2>
+        <p class="text-xs opacity-75 leading-relaxed">年間稼働可能時間、税金、経費を正しく織り込み、持続可能な時間単価および日額を試算します。</p>
       </div>
       <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">よくある質問と価格交渉のコツ</h2>
-        <div class="space-y-2.5">
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">Why should freelancers avoid purely hourly contracts?</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">
-              As your skills improve and you work faster, hourly billing punishes efficiency. Fixed-price milestone contracts reward speed, expertise, and delivered client outcomes.
-            </p>
+        <h3 class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 mb-3">報酬設計に関するよくある質問</h3>
+        <div class="space-y-3 text-xs">
+          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
+            <h4 class="font-bold mb-1 opacity-90">なぜ税率は 100% 未満である必要がありますか？</h4>
+            <p class="opacity-70 leading-relaxed">100% の税率では手取りがゼロになり、計算式上でゼロ除算エラーが発生するため、99.99% 以下に制限されています。</p>
           </div>
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">100% 完全機密保持</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">希望時給や利益目標などの財務情報は端末内でのみ安全に計算されます。</p>
-          </div>
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">即座に算出する価格モデル</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">過度な値引きや無償の仕様変更を防ぐ堅牢な見積もりを素早く作成。</p>
+          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
+            <h4 class="font-bold mb-1 opacity-90">計算式の基準は何ですか？</h4>
+            <p class="opacity-70 leading-relaxed">必要年間売上 = (手取り / (1 - 税率)) + (月間経費 * 12)。これを年間総稼働時間で割ることで時間単価を算出します。</p>
           </div>
         </div>
       </div>
@@ -781,76 +716,78 @@
 </div>
 
 <script>
-(function() {
-  const inpRate = document.getElementById('inp-rate');
-  const inpHours = document.getElementById('inp-hours');
-  const inpWeeks = document.getElementById('inp-weeks');
-  const inpRevisions = document.getElementById('inp-revisions');
-  const inpBuffer = document.getElementById('inp-buffer');
-  const inpRush = document.getElementById('inp-rush');
-  const inpExpenses = document.getElementById('inp-expenses');
+(function(){
+  'use strict';
+  const incEl = document.getElementById('rate-income');
+  const hrsEl = document.getElementById('rate-hours');
+  const vacEl = document.getElementById('rate-vacation');
+  const taxEl = document.getElementById('rate-tax');
+  const ovhEl = document.getElementById('rate-overhead');
+  const hRes = document.getElementById('res-hourly');
+  const dRes = document.getElementById('res-day');
+  const gRes = document.getElementById('res-gross');
+  const btnCopy = document.getElementById('btn-copy-rate');
+  const validation = document.getElementById('rate-validation');
 
-  const outTotal = document.getElementById('out-total');
-  const outEffective = document.getElementById('out-effective');
-  const outDep = document.getElementById('out-dep');
-  const outBeta = document.getElementById('out-beta');
-  const outFinal = document.getElementById('out-final');
-  const outRetainer = document.getElementById('out-retainer');
-  const outClause = document.getElementById('clause-output');
+  const errorMessage = 'すべての必須値を表示範囲内で入力してください。';
 
-  const copyBtn = document.getElementById('btn-copy-clause');
-  const copyText = document.getElementById('copy-clause-text');
-
-  function update() {
-    const rate = parseFloat(inpRate.value) || 75;
-    const hours = parseFloat(inpHours.value) || 40;
-    const weeks = parseFloat(inpWeeks.value) || 3;
-    const revs = parseInt(inpRevisions.value) || 2;
-    const bufferPct = parseFloat(inpBuffer.value) || 0;
-    const rushPct = parseFloat(inpRush.value) || 0;
-    const expenses = parseFloat(inpExpenses.value) || 0;
-
-    const baseLabor = rate * hours;
-    const bufferAmt = baseLabor * (bufferPct / 100);
-    const rushAmt = baseLabor * (rushPct / 100);
-    const totalQuote = baseLabor + bufferAmt + rushAmt + expenses;
-    const effectiveRate = hours > 0 ? (totalQuote - expenses) / hours : rate;
-
-    const dep = totalQuote * 0.5;
-    const beta = totalQuote * 0.25;
-    const finalBal = totalQuote * 0.25;
-    const retainer = rate * 10 * 1.25;
-
-    outTotal.textContent = '$' + totalQuote.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outEffective.textContent = '$' + effectiveRate.toFixed(2) + '/hr';
-    outDep.textContent = '$' + dep.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outBeta.textContent = '$' + beta.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outFinal.textContent = '$' + finalBal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outRetainer.textContent = '$' + retainer.toFixed(2) + '/mo';
-
-    let clause = 'PAYMENT & SCOPE TERMS:\n';
-    clause += '1. Total Project Investment: $' + totalQuote.toFixed(2) + ' USD fixed contract fee.\n';
-    clause += '2. Milestone Schedule: 50% ($' + dep.toFixed(2) + ') due upfront upon agreement; 25% ($' + beta.toFixed(2) + ') upon delivery of Stage 2 review; 25% ($' + finalBal.toFixed(2) + ') upon final deployment and asset transfer.\n';
-    clause += '3. Delivery Window: ' + weeks + ' weeks from receipt of initial deposit and required client assets.\n';
-    clause += '4. Revision Policy: Agreement includes up to ' + revs + ' consolidated rounds of revisions. Additional scope requested beyond agreed specifications will be billed at $' + rate.toFixed(2) + '/hour.';
-
-    outClause.value = clause;
+  function validValues(entries) {
+    const valid = entries.map(([el, min, max, integer]) => {
+      const n = Number(el.value);
+      const ok = el.value.trim() !== '' && Number.isFinite(n) && n >= min && n <= max && (!integer || Number.isInteger(n));
+      el.setAttribute('aria-invalid', String(!ok));
+      return ok;
+    }).every(Boolean);
+    if (validation) validation.textContent = valid ? '' : errorMessage;
+    return valid;
   }
 
-  [inpRate, inpHours, inpWeeks, inpRevisions, inpBuffer, inpRush, inpExpenses].forEach(el => el && el.addEventListener('input', update));
+  function calculate() {
+    if (!validValues([[incEl, 0, 1e12], [hrsEl, 1, 80], [vacEl, 0, 51], [taxEl, 0, 99.99], [ovhEl, 0, 1e12]])) {
+      [hRes, dRes, gRes].forEach(el => { if (el) el.textContent = ''; });
+      if (btnCopy) btnCopy.disabled = true;
+      return;
+    }
+    if (btnCopy) btnCopy.disabled = false;
+    const netIncome = Number(incEl.value);
+    const weeklyBillable = Number(hrsEl.value);
+    const vacWeeks = Number(vacEl.value);
+    const taxRate = Number(taxEl.value) / 100;
+    const monthlyOverhead = Number(ovhEl.value);
 
-  copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(outClause.value).then(() => {
-      copyText.innerText = "✓ コピー完了!";
-      copyBtn.classList.add('bg-emerald-400');
-      setTimeout(() => {
-        copyText.innerText = "支払条項をコピー";
-        copyBtn.classList.remove('bg-emerald-400');
-      }, 1800);
-    });
+    const workingWeeks = 52 - vacWeeks;
+    const annualBillableHours = workingWeeks * weeklyBillable;
+
+    // Gross needed = (Net / (1 - taxRate)) + (monthlyOverhead * 12)
+    const neededGross = (netIncome / (1 - taxRate)) + (monthlyOverhead * 12);
+    const hourly = neededGross / annualBillableHours;
+    const day = hourly * 8;
+    const monthlyGross = neededGross / 12;
+
+    if (hRes) hRes.textContent = '$' + Math.round(hourly).toLocaleString();
+    if (dRes) dRes.textContent = '$' + Math.round(day).toLocaleString();
+    if (gRes) gRes.textContent = '$' + Math.round(monthlyGross).toLocaleString();
+  }
+
+  [incEl, hrsEl, vacEl, taxEl, ovhEl].forEach(el => {
+    if (el) el.addEventListener('input', calculate);
   });
+  calculate();
 
-  update();
+  if (btnCopy) {
+    btnCopy.addEventListener('click', () => {
+      const text = `Minimum Hourly Rate: ${hRes ? hRes.textContent : ''}/h | Day Rate: ${dRes ? dRes.textContent : ''}/day | Monthly Gross Target: ${gRes ? gRes.textContent : ''}`;
+      navigator.clipboard.writeText(text).then(() => {
+        const span = document.getElementById('copy-rate-text');
+        if (span) {
+          const orig = span.textContent;
+          span.textContent = 'コピー完了！';
+          setTimeout(() => { span.textContent = orig; }, 1500);
+        }
+        if (window.showToast) window.showToast('コピー完了！');
+      });
+    });
+  }
 })();
 </script>
 

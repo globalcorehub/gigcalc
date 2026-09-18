@@ -630,149 +630,84 @@
     
 
     
-<div class="max-w-5xl mx-auto">
+<div class="max-w-4xl mx-auto">
   <div class="bg-[#11141d] rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-[#1e2333] hover:border-[#10b981]/50 p-4 sm:p-6 md:p-8">
-    <!-- Header -->
     <div class="border-b border-[#1e2333] pb-4 sm:pb-6">
       <div class="flex items-center justify-between mb-2 sm:mb-3">
         <div class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 font-mono font-bold">
-          <span>💼 Calculadora de Preços para Contratos Freelancer</span>
+          <span>⚡ Calculadora de Valor-Hora e Orçamentos para Freelancers</span>
         </div>
-        <span class="text-[10px] sm:text-[11px] font-mono opacity-60">100% no Navegador • Preço Fixo, Parcelamento e Retainer</span>
+        <span class="text-[10px] sm:text-[11px] font-mono opacity-60">100% no Navegador • Validação Rigorosa de Faixas Financeiras</span>
       </div>
       <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">Calculadora de Preços para Contratos Freelancer - Orçamentos e Retentores</h1>
       <p class="text-xs sm:text-sm opacity-70 mt-1.5 leading-relaxed">Calcule orçamentos de projetos com preço fixo, parcelamento de pagamentos e contratos mensais de consultoria considerando margem de segurança e impostos.</p>
     </div>
 
-    <!-- Inputs & Outputs Grid -->
-    <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <!-- Input Controls (6 cols) -->
-      <div class="lg:col-span-6 space-y-3.5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono font-bold opacity-80 mb-1">Valor Hora Base Desejado ($/h)</label>
-            <input id="inp-rate" type="number" value="75" min="10" step="5" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono font-bold opacity-80 mb-1">Horas Estimadas de Escopo</label>
-            <input id="inp-hours" type="number" value="40" min="1" step="1" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">Duração Prevista (Semanas)</label>
-            <input id="inp-weeks" type="number" value="3" min="1" max="52" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">Rodadas de Alteração Incluídas</label>
-            <input id="inp-revisions" type="number" value="2" min="0" max="10" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">Margem de Risco e Imprevistos (%)</label>
-            <input id="inp-buffer" type="number" value="20" min="0" max="100" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono opacity-75 mb-1">Adicional de Urgência/Complexidade (%)</label>
-            <input id="inp-rush" type="number" value="15" min="0" max="100" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
-          </div>
-        </div>
-
+    <!-- Inputs Grid -->
+    <section class="audit-tool mt-6 space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div>
-          <label class="block text-xs font-mono opacity-75 mb-1">Custos Diretos com Ferramentas ($)</label>
-          <input id="inp-expenses" type="number" value="150" min="0" step="25" class="w-full p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500">
+          <label for="rate-income" class="block text-xs font-mono font-bold opacity-75 mb-1.5">Renda Líquida Anual Desejada ($)</label>
+          <input id="rate-income" type="number" min="0" max="1000000000000" value="90000" step="5000" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-hours" class="block text-xs font-mono font-bold opacity-75 mb-1.5">Horas Cobráveis por Semana</label>
+          <input id="rate-hours" type="number" min="1" max="80" value="25" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-vacation" class="block text-xs font-mono font-bold opacity-75 mb-1.5">Semanas de Férias por Ano</label>
+          <input id="rate-vacation" type="number" min="0" max="51" value="4" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div>
+          <label for="rate-tax" class="block text-xs font-mono font-bold opacity-75 mb-1.5">Alíquota Estimada de Impostos (%)</label>
+          <input id="rate-tax" type="number" min="0" max="99.99" value="25" step="0.5" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="rate-overhead" class="block text-xs font-mono font-bold opacity-75 mb-1.5">Custos Mensais de Negócio ($)</label>
+          <input id="rate-overhead" type="number" min="0" max="1000000000000" value="500" step="100" class="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[#1e2333] hover:border-[#10b981]/50 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
         </div>
       </div>
 
-      <!-- Output Pricing Cards (6 cols) -->
-      <div class="lg:col-span-6 space-y-3 flex flex-col justify-between">
-        <!-- Hero Fixed Quote Card -->
-        <div class="p-4 rounded-xl border-2 border-emerald-500/50 bg-emerald-500/10 shadow-lg">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono uppercase tracking-wider font-bold text-emerald-400">Valor Fixo Total do Projeto</span>
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Recommended</span>
-          </div>
-          <div id="out-total" class="text-3xl sm:text-4xl font-black font-mono text-white mt-1">$4,350.00</div>
-          <div class="text-[11px] opacity-75 font-mono mt-1 flex items-center justify-between">
-            <span>Valor Hora Efetivo Real: <strong id="out-effective" class="text-emerald-400">$108.75/hr</strong></span>
-            <span>Est. Margin: <strong class="text-emerald-400">+35%</strong></span>
-          </div>
+      <!-- Results Grid -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">Valor Mínimo por Hora</span>
+          <div id="res-hourly" class="text-2xl font-black font-mono text-emerald-400 mt-1 min-h-[2rem]"></div>
         </div>
-
-        <!-- Milestones Breakdown -->
-        <div class="grid grid-cols-3 gap-2 text-center font-mono">
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">Sinal de Entrada (50%)</span>
-            <span id="out-dep" class="text-sm sm:text-base font-bold text-emerald-300 block mt-0.5">$2,175</span>
-          </div>
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">Etapa 2: Entrega Prévia (25%)</span>
-            <span id="out-beta" class="text-sm sm:text-base font-bold opacity-90 block mt-0.5">$1,087.50</span>
-          </div>
-          <div class="p-2.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
-            <span class="text-[10px] opacity-60 block truncate">Etapa 3: Conclusão Final (25%)</span>
-            <span id="out-final" class="text-sm sm:text-base font-bold opacity-90 block mt-0.5">$1,087.50</span>
-          </div>
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">Valor Diário (8 horas)</span>
+          <div id="res-day" class="text-2xl font-black font-mono text-cyan-400 mt-1 min-h-[2rem]"></div>
         </div>
-
-        <!-- Retainer Option -->
-        <div class="p-3 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 flex items-center justify-between">
-          <div>
-            <span class="text-[11px] font-mono opacity-60 block">Retainer Mensal Recomendado</span>
-            <span class="text-xs font-mono font-bold opacity-80">(~10 hours/mo maintenance)</span>
-          </div>
-          <span id="out-retainer" class="text-lg font-black font-mono text-emerald-400">$950.00/mo</span>
+        <div class="p-4 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-white/5 text-center">
+          <span class="text-[10px] uppercase font-mono opacity-70 block">Meta Bruta Mensal</span>
+          <div id="res-gross" class="text-2xl font-black font-mono text-purple-400 mt-1 min-h-[2rem]"></div>
         </div>
       </div>
-    </div>
 
-    <!-- Generated Clause Box -->
-    <div class="mt-6 border-t border-[#1e2333] hover:border-[#10b981]/50 pt-5">
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs font-mono font-bold opacity-80">Cláusula de Pagamento Pronta para Contrato</span>
-        <button id="btn-copy-clause" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500 text-black text-xs font-mono font-bold hover:bg-emerald-400 transition active:scale-95">
-          <span id="copy-clause-text">Copiar Cláusula</span>
+      <div class="pt-2 flex items-center justify-between">
+        <button id="btn-copy-rate" class="px-4 py-2 text-xs rounded-xl font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-black transition active:scale-95 shadow-sm flex items-center gap-2">
+          <span id="copy-rate-text">Copiar Valores</span>
         </button>
       </div>
-      <textarea id="clause-output" readonly rows="5" class="w-full p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/30 text-xs font-mono opacity-90 focus:outline-none resize-y leading-relaxed"></textarea>
-    </div>
+      <p id="rate-validation" role="status" aria-live="polite" class="text-xs font-mono text-red-400 min-h-[1.5rem] mt-2"></p>
+    </section>
 
-    <!-- Documentation & FAQ -->
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#1e2333] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <!-- Technical Guide & FAQ -->
+    <div class="mt-10 pt-8 border-t border-[#1e2333] space-y-6">
       <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">Calculadora de Preços para Contratos Freelancer - Orçamentos e Retentores</h2>
-        <p class="text-xs opacity-75 leading-relaxed mb-4">
-          Professional financial planning utility for <strong>calculadora orcamento freelance projeto</strong>. Transition from unpredictable hourly billing to profitable milestone contracts with built-in buffers for revisions and rush requirements.
-        </p>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">Como Cobrar por Projetos Fechados</h3>
-        <ol class="text-xs opacity-75 space-y-1.5 font-mono list-decimal list-inside mb-4">
-          <li>Enter your baseline target hourly rate and realistic scope duration.</li>
-          <li>Apply a 15-25% contingency buffer to insulate against unbilled scope creep.</li>
-          <li>Require a 50% upfront commitment deposit prior to commencing work.</li>
-          <li>Copy the standardized milestone schedule clause directly into your statement of work.</li>
-        </ol>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mb-2">Related Search Queries</h3>
-        <ul class="space-y-0.5"><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>calculadora orcamento freelance projeto</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>preco fixo contrato cliente</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>calcular valor entrada freelance</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>contrato mensal consultoria valor</li><li class='flex items-center text-xs opacity-75 py-1 font-mono'><span class='mr-2' style='color:#10b981'>+</span>quanto cobrar projeto freelance</li></ul>
+        <h2 class="text-sm sm:text-base font-bold mb-2">Guia de Precificação para Profissionais Autônomos</h2>
+        <p class="text-xs opacity-75 leading-relaxed">Defina seu valor-hora e valor-dia com base nas horas úteis, encargos e despesas reais.</p>
       </div>
       <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-2.5">Perguntas Frequentes</h2>
-        <div class="space-y-2.5">
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">Why should freelancers avoid purely hourly contracts?</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">
-              As your skills improve and you work faster, hourly billing punishes efficiency. Fixed-price milestone contracts reward speed, expertise, and delivered client outcomes.
-            </p>
+        <h3 class="text-xs font-bold uppercase font-mono tracking-wider opacity-80 mb-3">Perguntas Frequentes</h3>
+        <div class="space-y-3 text-xs">
+          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
+            <h4 class="font-bold mb-1 opacity-90">Por que a alíquota deve ser inferior a 100%?</h4>
+            <p class="opacity-70 leading-relaxed">Uma alíquota de 100% inviabiliza a renda líquida e gera erro de divisão por zero.</p>
           </div>
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">100% Sigilo Financeiro</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">Suas metas de faturamento são processadas de forma estritamente local.</p>
-          </div>
-          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5">
-            <h4 class="text-xs font-bold mb-1">Modelagem em Tempo Real</h4>
-            <p class="text-[11px] opacity-70 leading-relaxed">Planejamento financeiro sem atrasos nem complicações.</p>
+          <div class="p-3.5 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10">
+            <h4 class="font-bold mb-1 opacity-90">Qual é a fórmula aplicada?</h4>
+            <p class="opacity-70 leading-relaxed">Bruto Anual = (Líquido / (1 - Imposto)) + (Custos * 12). O valor-hora é o bruto dividido pelas horas anuais produtivas.</p>
           </div>
         </div>
       </div>
@@ -781,76 +716,78 @@
 </div>
 
 <script>
-(function() {
-  const inpRate = document.getElementById('inp-rate');
-  const inpHours = document.getElementById('inp-hours');
-  const inpWeeks = document.getElementById('inp-weeks');
-  const inpRevisions = document.getElementById('inp-revisions');
-  const inpBuffer = document.getElementById('inp-buffer');
-  const inpRush = document.getElementById('inp-rush');
-  const inpExpenses = document.getElementById('inp-expenses');
+(function(){
+  'use strict';
+  const incEl = document.getElementById('rate-income');
+  const hrsEl = document.getElementById('rate-hours');
+  const vacEl = document.getElementById('rate-vacation');
+  const taxEl = document.getElementById('rate-tax');
+  const ovhEl = document.getElementById('rate-overhead');
+  const hRes = document.getElementById('res-hourly');
+  const dRes = document.getElementById('res-day');
+  const gRes = document.getElementById('res-gross');
+  const btnCopy = document.getElementById('btn-copy-rate');
+  const validation = document.getElementById('rate-validation');
 
-  const outTotal = document.getElementById('out-total');
-  const outEffective = document.getElementById('out-effective');
-  const outDep = document.getElementById('out-dep');
-  const outBeta = document.getElementById('out-beta');
-  const outFinal = document.getElementById('out-final');
-  const outRetainer = document.getElementById('out-retainer');
-  const outClause = document.getElementById('clause-output');
+  const errorMessage = 'Preencha todos os valores dentro dos limites indicados.';
 
-  const copyBtn = document.getElementById('btn-copy-clause');
-  const copyText = document.getElementById('copy-clause-text');
-
-  function update() {
-    const rate = parseFloat(inpRate.value) || 75;
-    const hours = parseFloat(inpHours.value) || 40;
-    const weeks = parseFloat(inpWeeks.value) || 3;
-    const revs = parseInt(inpRevisions.value) || 2;
-    const bufferPct = parseFloat(inpBuffer.value) || 0;
-    const rushPct = parseFloat(inpRush.value) || 0;
-    const expenses = parseFloat(inpExpenses.value) || 0;
-
-    const baseLabor = rate * hours;
-    const bufferAmt = baseLabor * (bufferPct / 100);
-    const rushAmt = baseLabor * (rushPct / 100);
-    const totalQuote = baseLabor + bufferAmt + rushAmt + expenses;
-    const effectiveRate = hours > 0 ? (totalQuote - expenses) / hours : rate;
-
-    const dep = totalQuote * 0.5;
-    const beta = totalQuote * 0.25;
-    const finalBal = totalQuote * 0.25;
-    const retainer = rate * 10 * 1.25;
-
-    outTotal.textContent = '$' + totalQuote.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outEffective.textContent = '$' + effectiveRate.toFixed(2) + '/hr';
-    outDep.textContent = '$' + dep.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outBeta.textContent = '$' + beta.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outFinal.textContent = '$' + finalBal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    outRetainer.textContent = '$' + retainer.toFixed(2) + '/mo';
-
-    let clause = 'PAYMENT & SCOPE TERMS:\n';
-    clause += '1. Total Project Investment: $' + totalQuote.toFixed(2) + ' USD fixed contract fee.\n';
-    clause += '2. Milestone Schedule: 50% ($' + dep.toFixed(2) + ') due upfront upon agreement; 25% ($' + beta.toFixed(2) + ') upon delivery of Stage 2 review; 25% ($' + finalBal.toFixed(2) + ') upon final deployment and asset transfer.\n';
-    clause += '3. Delivery Window: ' + weeks + ' weeks from receipt of initial deposit and required client assets.\n';
-    clause += '4. Revision Policy: Agreement includes up to ' + revs + ' consolidated rounds of revisions. Additional scope requested beyond agreed specifications will be billed at $' + rate.toFixed(2) + '/hour.';
-
-    outClause.value = clause;
+  function validValues(entries) {
+    const valid = entries.map(([el, min, max, integer]) => {
+      const n = Number(el.value);
+      const ok = el.value.trim() !== '' && Number.isFinite(n) && n >= min && n <= max && (!integer || Number.isInteger(n));
+      el.setAttribute('aria-invalid', String(!ok));
+      return ok;
+    }).every(Boolean);
+    if (validation) validation.textContent = valid ? '' : errorMessage;
+    return valid;
   }
 
-  [inpRate, inpHours, inpWeeks, inpRevisions, inpBuffer, inpRush, inpExpenses].forEach(el => el && el.addEventListener('input', update));
+  function calculate() {
+    if (!validValues([[incEl, 0, 1e12], [hrsEl, 1, 80], [vacEl, 0, 51], [taxEl, 0, 99.99], [ovhEl, 0, 1e12]])) {
+      [hRes, dRes, gRes].forEach(el => { if (el) el.textContent = ''; });
+      if (btnCopy) btnCopy.disabled = true;
+      return;
+    }
+    if (btnCopy) btnCopy.disabled = false;
+    const netIncome = Number(incEl.value);
+    const weeklyBillable = Number(hrsEl.value);
+    const vacWeeks = Number(vacEl.value);
+    const taxRate = Number(taxEl.value) / 100;
+    const monthlyOverhead = Number(ovhEl.value);
 
-  copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(outClause.value).then(() => {
-      copyText.innerText = "✓ Copiado!";
-      copyBtn.classList.add('bg-emerald-400');
-      setTimeout(() => {
-        copyText.innerText = "Copiar Cláusula";
-        copyBtn.classList.remove('bg-emerald-400');
-      }, 1800);
-    });
+    const workingWeeks = 52 - vacWeeks;
+    const annualBillableHours = workingWeeks * weeklyBillable;
+
+    // Gross needed = (Net / (1 - taxRate)) + (monthlyOverhead * 12)
+    const neededGross = (netIncome / (1 - taxRate)) + (monthlyOverhead * 12);
+    const hourly = neededGross / annualBillableHours;
+    const day = hourly * 8;
+    const monthlyGross = neededGross / 12;
+
+    if (hRes) hRes.textContent = '$' + Math.round(hourly).toLocaleString();
+    if (dRes) dRes.textContent = '$' + Math.round(day).toLocaleString();
+    if (gRes) gRes.textContent = '$' + Math.round(monthlyGross).toLocaleString();
+  }
+
+  [incEl, hrsEl, vacEl, taxEl, ovhEl].forEach(el => {
+    if (el) el.addEventListener('input', calculate);
   });
+  calculate();
 
-  update();
+  if (btnCopy) {
+    btnCopy.addEventListener('click', () => {
+      const text = `Minimum Hourly Rate: ${hRes ? hRes.textContent : ''}/h | Day Rate: ${dRes ? dRes.textContent : ''}/day | Monthly Gross Target: ${gRes ? gRes.textContent : ''}`;
+      navigator.clipboard.writeText(text).then(() => {
+        const span = document.getElementById('copy-rate-text');
+        if (span) {
+          const orig = span.textContent;
+          span.textContent = 'Copiado!';
+          setTimeout(() => { span.textContent = orig; }, 1500);
+        }
+        if (window.showToast) window.showToast('Copiado!');
+      });
+    });
+  }
 })();
 </script>
 
